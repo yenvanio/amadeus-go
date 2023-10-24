@@ -1,4 +1,4 @@
-# \ShoppingAPI
+# ShoppingAPI
 
 All URIs are relative to *https://test.api.amadeus.com/v1*
 
