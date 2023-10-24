@@ -8,13 +8,15 @@ import (
 	"testing"
 )
 
-func Test_openapi_ShoppingAPIService(t *testing.T) {
+func Test_openapi_OAuth2AccessTokenAPIService(t *testing.T) {
 
 	configuration := amadeus.NewConfiguration()
 	apiClient := amadeus.NewAPIClient(configuration)
 
-	t.Run("Test ShoppingAPIService GetFlightOffers", func(t *testing.T) {
-		resp, httpRes, err := apiClient.ShoppingAPI.GetFlightOffers(context.Background()).Execute()
+	t.Run("Test OAuth2AccessTokenAPIService GetOauth2TokenInfo", func(t *testing.T) {
+		var accessToken string
+
+		resp, httpRes, err := apiClient.OAuth2AccessTokenAPI.GetOauth2TokenInfo(context.Background(), accessToken).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -22,8 +24,8 @@ func Test_openapi_ShoppingAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ShoppingAPIService SearchFlightOffers", func(t *testing.T) {
-		resp, httpRes, err := apiClient.ShoppingAPI.SearchFlightOffers(context.Background()).Execute()
+	t.Run("Test OAuth2AccessTokenAPIService Oauth2Token", func(t *testing.T) {
+		resp, httpRes, err := apiClient.OAuth2AccessTokenAPI.Oauth2Token(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

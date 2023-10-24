@@ -7,6 +7,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
+	"github.com/yenvanio/amadeus-go/amadeus/authorization"
 	"github.com/yenvanio/amadeus-go/amadeus/shopping"
 	"io"
 	"log"
@@ -38,7 +39,8 @@ type Client struct {
 	common Service // Reuse a single struct instead of allocating one for each Service on the heap.
 
 	// API Services
-	ShoppingAPI *shopping.APIService
+	ShoppingAPI          *shopping.APIService
+	OAuth2AccessTokenAPI *authorization.OAuth2AccessTokenAPIService
 }
 
 type Service struct {
@@ -58,11 +60,12 @@ func NewAPIClient(cfg *Configuration) *Client {
 
 	// API Services
 	c.ShoppingAPI = (*shopping.APIService)(&c.common)
+	c.OAuth2AccessTokenAPI = (*authorization.OAuth2AccessTokenAPIService)(&c.common)
 
 	return c
 }
 
-func atoi(in string) (int, error) {
+func Atoi(in string) (int, error) {
 	return strconv.Atoi(in)
 }
 
@@ -90,7 +93,7 @@ func SelectHeaderAccept(accepts []string) string {
 	return strings.Join(accepts, ",")
 }
 
-// contains is a case insensitive match, finding needle in a haystack
+// contains is a case-insensitive match, finding needle in a haystack
 func contains(haystack []string, needle string) bool {
 	for _, a := range haystack {
 		if strings.EqualFold(a, needle) {
@@ -100,8 +103,8 @@ func contains(haystack []string, needle string) bool {
 	return false
 }
 
-// Verify optional parameters are of the correct type.
-func typeCheckParameter(obj interface{}, expected string, name string) error {
+// TypeCheckParameter Verify optional parameters are of the correct type.
+func TypeCheckParameter(obj interface{}, expected string, name string) error {
 	// Make sure there is an object.
 	if obj == nil {
 		return nil
@@ -114,7 +117,7 @@ func typeCheckParameter(obj interface{}, expected string, name string) error {
 	return nil
 }
 
-func parameterValueToString(obj interface{}, key string) string {
+func ParameterValueToString(obj interface{}, key string) string {
 	if reflect.TypeOf(obj).Kind() != reflect.Ptr {
 		return fmt.Sprintf("%v", obj)
 	}
@@ -216,8 +219,8 @@ func ParameterAddToHeaderOrQuery(headerOrQueryParams interface{}, keyPrefix stri
 	}
 }
 
-// helper for converting interface{} parameters to json strings
-func parameterToJson(obj interface{}) (string, error) {
+// ParameterToJson helper for converting interface{} parameters to json strings
+func ParameterToJson(obj interface{}) (string, error) {
 	jsonBuf, err := json.Marshal(obj)
 	if err != nil {
 		return "", err
@@ -489,8 +492,8 @@ func ReportError(format string, a ...interface{}) error {
 	return fmt.Errorf(format, a...)
 }
 
-// A wrapper for strict JSON decoding
-func newStrictDecoder(data []byte) *json.Decoder {
+// NewStrictDecoder A wrapper for strict JSON decoding
+func NewStrictDecoder(data []byte) *json.Decoder {
 	dec := json.NewDecoder(bytes.NewBuffer(data))
 	dec.DisallowUnknownFields()
 	return dec
@@ -604,7 +607,7 @@ func CacheExpires(r *http.Response) time.Time {
 	return expires
 }
 
-func strlen(s string) int {
+func Strlen(s string) int {
 	return utf8.RuneCountInString(s)
 }
 

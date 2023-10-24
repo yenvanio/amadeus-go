@@ -59,6 +59,8 @@ All URIs are relative to *https://test.api.amadeus.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*OAuth2AccessTokenAPI* | [**GetOauth2TokenInfo**](docs/OAuth2AccessTokenAPI.md#getoauth2tokeninfo) | **Get** /security/oauth2/token/{access_token} | The OAuth 2.0 token info endpoint
+*OAuth2AccessTokenAPI* | [**Oauth2Token**](docs/OAuth2AccessTokenAPI.md#oauth2token) | **Post** /security/oauth2/token | The OAuth 2.0 token endpoint
 *ShoppingAPI* | [**GetFlightOffers**](docs/ShoppingAPI.md#getflightoffers) | **Get** /shopping/flight-offers | Return list of Flight Offers based on searching criteria.
 *ShoppingAPI* | [**SearchFlightOffers**](docs/ShoppingAPI.md#searchflightoffers) | **Post** /shopping/flight-offers | Return list of Flight Offers based on posted searching criteria.
 *ShoppingAPI* | [**QuoteAirOffers**](docs/ShoppingAPI.md#quoteairoffers) | **Post** /shopping/flight-offers/pricing | Confirm pricing of given flightOffers.
@@ -72,6 +74,7 @@ Class | Method | HTTP request | Description
  - [Address](docs/Address.md)
  - [AircraftEquipment](docs/AircraftEquipment.md)
  - [AllotmentDetails](docs/AllotmentDetails.md)
+ - [AmadeusOAuth2Token](docs/AmadeusOAuth2Token.md)
  - [BaggageAllowance](docs/BaggageAllowance.md)
  - [Bags](docs/Bags.md)
  - [BaseName](docs/BaseName.md)
@@ -104,6 +107,7 @@ Class | Method | HTTP request | Description
  - [EmergencyContact](docs/EmergencyContact.md)
  - [Error400](docs/Error400.md)
  - [Error500](docs/Error500.md)
+ - [ErrorResponse](docs/ErrorResponse.md)
  - [ExtendedCabinRestriction](docs/ExtendedCabinRestriction.md)
  - [ExtendedPrice](docs/ExtendedPrice.md)
  - [ExtendedPricingOptions](docs/ExtendedPricingOptions.md)
