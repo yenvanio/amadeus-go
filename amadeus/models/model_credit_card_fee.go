@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the CreditCardFee type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &CreditCardFee{}
+var _ utils.MappedNullable = &CreditCardFee{}
 
 // CreditCardFee struct for CreditCardFee
 type CreditCardFee struct {
@@ -46,7 +46,7 @@ func NewCreditCardFeeWithDefaults() *CreditCardFee {
 
 // GetBrand returns the Brand field value if set, zero value otherwise.
 func (o *CreditCardFee) GetBrand() PaymentBrand {
-	if o == nil || amadeus.IsNil(o.Brand) {
+	if o == nil || utils.IsNil(o.Brand) {
 		var ret PaymentBrand
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *CreditCardFee) GetBrand() PaymentBrand {
 // GetBrandOk returns a tuple with the Brand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditCardFee) GetBrandOk() (*PaymentBrand, bool) {
-	if o == nil || amadeus.IsNil(o.Brand) {
+	if o == nil || utils.IsNil(o.Brand) {
 		return nil, false
 	}
 	return o.Brand, true
@@ -64,7 +64,7 @@ func (o *CreditCardFee) GetBrandOk() (*PaymentBrand, bool) {
 
 // HasBrand returns a boolean if a field has been set.
 func (o *CreditCardFee) HasBrand() bool {
-	if o != nil && !amadeus.IsNil(o.Brand) {
+	if o != nil && !utils.IsNil(o.Brand) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *CreditCardFee) SetBrand(v PaymentBrand) {
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
 func (o *CreditCardFee) GetAmount() string {
-	if o == nil || amadeus.IsNil(o.Amount) {
+	if o == nil || utils.IsNil(o.Amount) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *CreditCardFee) GetAmount() string {
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditCardFee) GetAmountOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Amount) {
+	if o == nil || utils.IsNil(o.Amount) {
 		return nil, false
 	}
 	return o.Amount, true
@@ -96,7 +96,7 @@ func (o *CreditCardFee) GetAmountOk() (*string, bool) {
 
 // HasAmount returns a boolean if a field has been set.
 func (o *CreditCardFee) HasAmount() bool {
-	if o != nil && !amadeus.IsNil(o.Amount) {
+	if o != nil && !utils.IsNil(o.Amount) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *CreditCardFee) SetAmount(v string) {
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
 func (o *CreditCardFee) GetCurrency() string {
-	if o == nil || amadeus.IsNil(o.Currency) {
+	if o == nil || utils.IsNil(o.Currency) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *CreditCardFee) GetCurrency() string {
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditCardFee) GetCurrencyOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Currency) {
+	if o == nil || utils.IsNil(o.Currency) {
 		return nil, false
 	}
 	return o.Currency, true
@@ -128,7 +128,7 @@ func (o *CreditCardFee) GetCurrencyOk() (*string, bool) {
 
 // HasCurrency returns a boolean if a field has been set.
 func (o *CreditCardFee) HasCurrency() bool {
-	if o != nil && !amadeus.IsNil(o.Currency) {
+	if o != nil && !utils.IsNil(o.Currency) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *CreditCardFee) SetCurrency(v string) {
 
 // GetFlightOfferId returns the FlightOfferId field value if set, zero value otherwise.
 func (o *CreditCardFee) GetFlightOfferId() string {
-	if o == nil || amadeus.IsNil(o.FlightOfferId) {
+	if o == nil || utils.IsNil(o.FlightOfferId) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *CreditCardFee) GetFlightOfferId() string {
 // GetFlightOfferIdOk returns a tuple with the FlightOfferId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditCardFee) GetFlightOfferIdOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.FlightOfferId) {
+	if o == nil || utils.IsNil(o.FlightOfferId) {
 		return nil, false
 	}
 	return o.FlightOfferId, true
@@ -160,7 +160,7 @@ func (o *CreditCardFee) GetFlightOfferIdOk() (*string, bool) {
 
 // HasFlightOfferId returns a boolean if a field has been set.
 func (o *CreditCardFee) HasFlightOfferId() bool {
-	if o != nil && !amadeus.IsNil(o.FlightOfferId) {
+	if o != nil && !utils.IsNil(o.FlightOfferId) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o CreditCardFee) MarshalJSON() ([]byte, error) {
 
 func (o CreditCardFee) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Brand) {
+	if !utils.IsNil(o.Brand) {
 		toSerialize["brand"] = o.Brand
 	}
-	if !amadeus.IsNil(o.Amount) {
+	if !utils.IsNil(o.Amount) {
 		toSerialize["amount"] = o.Amount
 	}
-	if !amadeus.IsNil(o.Currency) {
+	if !utils.IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
-	if !amadeus.IsNil(o.FlightOfferId) {
+	if !utils.IsNil(o.FlightOfferId) {
 		toSerialize["flightOfferId"] = o.FlightOfferId
 	}
 	return toSerialize, nil

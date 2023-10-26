@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Contact type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Contact{}
+var _ utils.MappedNullable = &Contact{}
 
 // Contact contact information
 type Contact struct {
@@ -52,7 +52,7 @@ func NewContactWithDefaults() *Contact {
 
 // GetAddresseeName returns the AddresseeName field value if set, zero value otherwise.
 func (o *Contact) GetAddresseeName() Name {
-	if o == nil || amadeus.IsNil(o.AddresseeName) {
+	if o == nil || utils.IsNil(o.AddresseeName) {
 		var ret Name
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *Contact) GetAddresseeName() Name {
 // GetAddresseeNameOk returns a tuple with the AddresseeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Contact) GetAddresseeNameOk() (*Name, bool) {
-	if o == nil || amadeus.IsNil(o.AddresseeName) {
+	if o == nil || utils.IsNil(o.AddresseeName) {
 		return nil, false
 	}
 	return o.AddresseeName, true
@@ -70,7 +70,7 @@ func (o *Contact) GetAddresseeNameOk() (*Name, bool) {
 
 // HasAddresseeName returns a boolean if a field has been set.
 func (o *Contact) HasAddresseeName() bool {
-	if o != nil && !amadeus.IsNil(o.AddresseeName) {
+	if o != nil && !utils.IsNil(o.AddresseeName) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *Contact) SetAddresseeName(v Name) {
 
 // GetAddress returns the Address field value if set, zero value otherwise.
 func (o *Contact) GetAddress() Address {
-	if o == nil || amadeus.IsNil(o.Address) {
+	if o == nil || utils.IsNil(o.Address) {
 		var ret Address
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *Contact) GetAddress() Address {
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Contact) GetAddressOk() (*Address, bool) {
-	if o == nil || amadeus.IsNil(o.Address) {
+	if o == nil || utils.IsNil(o.Address) {
 		return nil, false
 	}
 	return o.Address, true
@@ -102,7 +102,7 @@ func (o *Contact) GetAddressOk() (*Address, bool) {
 
 // HasAddress returns a boolean if a field has been set.
 func (o *Contact) HasAddress() bool {
-	if o != nil && !amadeus.IsNil(o.Address) {
+	if o != nil && !utils.IsNil(o.Address) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *Contact) SetAddress(v Address) {
 
 // GetLanguage returns the Language field value if set, zero value otherwise.
 func (o *Contact) GetLanguage() string {
-	if o == nil || amadeus.IsNil(o.Language) {
+	if o == nil || utils.IsNil(o.Language) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *Contact) GetLanguage() string {
 // GetLanguageOk returns a tuple with the Language field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Contact) GetLanguageOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Language) {
+	if o == nil || utils.IsNil(o.Language) {
 		return nil, false
 	}
 	return o.Language, true
@@ -134,7 +134,7 @@ func (o *Contact) GetLanguageOk() (*string, bool) {
 
 // HasLanguage returns a boolean if a field has been set.
 func (o *Contact) HasLanguage() bool {
-	if o != nil && !amadeus.IsNil(o.Language) {
+	if o != nil && !utils.IsNil(o.Language) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *Contact) SetLanguage(v string) {
 
 // GetPurpose returns the Purpose field value if set, zero value otherwise.
 func (o *Contact) GetPurpose() ContactPurpose {
-	if o == nil || amadeus.IsNil(o.Purpose) {
+	if o == nil || utils.IsNil(o.Purpose) {
 		var ret ContactPurpose
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *Contact) GetPurpose() ContactPurpose {
 // GetPurposeOk returns a tuple with the Purpose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Contact) GetPurposeOk() (*ContactPurpose, bool) {
-	if o == nil || amadeus.IsNil(o.Purpose) {
+	if o == nil || utils.IsNil(o.Purpose) {
 		return nil, false
 	}
 	return o.Purpose, true
@@ -166,7 +166,7 @@ func (o *Contact) GetPurposeOk() (*ContactPurpose, bool) {
 
 // HasPurpose returns a boolean if a field has been set.
 func (o *Contact) HasPurpose() bool {
-	if o != nil && !amadeus.IsNil(o.Purpose) {
+	if o != nil && !utils.IsNil(o.Purpose) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *Contact) SetPurpose(v ContactPurpose) {
 
 // GetPhones returns the Phones field value if set, zero value otherwise.
 func (o *Contact) GetPhones() []Phone {
-	if o == nil || amadeus.IsNil(o.Phones) {
+	if o == nil || utils.IsNil(o.Phones) {
 		var ret []Phone
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *Contact) GetPhones() []Phone {
 // GetPhonesOk returns a tuple with the Phones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Contact) GetPhonesOk() ([]Phone, bool) {
-	if o == nil || amadeus.IsNil(o.Phones) {
+	if o == nil || utils.IsNil(o.Phones) {
 		return nil, false
 	}
 	return o.Phones, true
@@ -198,7 +198,7 @@ func (o *Contact) GetPhonesOk() ([]Phone, bool) {
 
 // HasPhones returns a boolean if a field has been set.
 func (o *Contact) HasPhones() bool {
-	if o != nil && !amadeus.IsNil(o.Phones) {
+	if o != nil && !utils.IsNil(o.Phones) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *Contact) SetPhones(v []Phone) {
 
 // GetCompanyName returns the CompanyName field value if set, zero value otherwise.
 func (o *Contact) GetCompanyName() string {
-	if o == nil || amadeus.IsNil(o.CompanyName) {
+	if o == nil || utils.IsNil(o.CompanyName) {
 		var ret string
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *Contact) GetCompanyName() string {
 // GetCompanyNameOk returns a tuple with the CompanyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Contact) GetCompanyNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.CompanyName) {
+	if o == nil || utils.IsNil(o.CompanyName) {
 		return nil, false
 	}
 	return o.CompanyName, true
@@ -230,7 +230,7 @@ func (o *Contact) GetCompanyNameOk() (*string, bool) {
 
 // HasCompanyName returns a boolean if a field has been set.
 func (o *Contact) HasCompanyName() bool {
-	if o != nil && !amadeus.IsNil(o.CompanyName) {
+	if o != nil && !utils.IsNil(o.CompanyName) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *Contact) SetCompanyName(v string) {
 
 // GetEmailAddress returns the EmailAddress field value if set, zero value otherwise.
 func (o *Contact) GetEmailAddress() string {
-	if o == nil || amadeus.IsNil(o.EmailAddress) {
+	if o == nil || utils.IsNil(o.EmailAddress) {
 		var ret string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *Contact) GetEmailAddress() string {
 // GetEmailAddressOk returns a tuple with the EmailAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Contact) GetEmailAddressOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.EmailAddress) {
+	if o == nil || utils.IsNil(o.EmailAddress) {
 		return nil, false
 	}
 	return o.EmailAddress, true
@@ -262,7 +262,7 @@ func (o *Contact) GetEmailAddressOk() (*string, bool) {
 
 // HasEmailAddress returns a boolean if a field has been set.
 func (o *Contact) HasEmailAddress() bool {
-	if o != nil && !amadeus.IsNil(o.EmailAddress) {
+	if o != nil && !utils.IsNil(o.EmailAddress) {
 		return true
 	}
 
@@ -284,25 +284,25 @@ func (o Contact) MarshalJSON() ([]byte, error) {
 
 func (o Contact) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.AddresseeName) {
+	if !utils.IsNil(o.AddresseeName) {
 		toSerialize["addresseeName"] = o.AddresseeName
 	}
-	if !amadeus.IsNil(o.Address) {
+	if !utils.IsNil(o.Address) {
 		toSerialize["address"] = o.Address
 	}
-	if !amadeus.IsNil(o.Language) {
+	if !utils.IsNil(o.Language) {
 		toSerialize["language"] = o.Language
 	}
-	if !amadeus.IsNil(o.Purpose) {
+	if !utils.IsNil(o.Purpose) {
 		toSerialize["purpose"] = o.Purpose
 	}
-	if !amadeus.IsNil(o.Phones) {
+	if !utils.IsNil(o.Phones) {
 		toSerialize["phones"] = o.Phones
 	}
-	if !amadeus.IsNil(o.CompanyName) {
+	if !utils.IsNil(o.CompanyName) {
 		toSerialize["companyName"] = o.CompanyName
 	}
-	if !amadeus.IsNil(o.EmailAddress) {
+	if !utils.IsNil(o.EmailAddress) {
 		toSerialize["emailAddress"] = o.EmailAddress
 	}
 	return toSerialize, nil

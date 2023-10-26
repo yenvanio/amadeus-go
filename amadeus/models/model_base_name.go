@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the BaseName type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &BaseName{}
+var _ utils.MappedNullable = &BaseName{}
 
 // BaseName description of the name of a physical person
 type BaseName struct {
@@ -47,7 +47,7 @@ func NewBaseNameWithDefaults() *BaseName {
 
 // GetFirstName returns the FirstName field value if set, zero value otherwise.
 func (o *BaseName) GetFirstName() string {
-	if o == nil || amadeus.IsNil(o.FirstName) {
+	if o == nil || utils.IsNil(o.FirstName) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *BaseName) GetFirstName() string {
 // GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseName) GetFirstNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.FirstName) {
+	if o == nil || utils.IsNil(o.FirstName) {
 		return nil, false
 	}
 	return o.FirstName, true
@@ -65,7 +65,7 @@ func (o *BaseName) GetFirstNameOk() (*string, bool) {
 
 // HasFirstName returns a boolean if a field has been set.
 func (o *BaseName) HasFirstName() bool {
-	if o != nil && !amadeus.IsNil(o.FirstName) {
+	if o != nil && !utils.IsNil(o.FirstName) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *BaseName) SetFirstName(v string) {
 
 // GetLastName returns the LastName field value if set, zero value otherwise.
 func (o *BaseName) GetLastName() string {
-	if o == nil || amadeus.IsNil(o.LastName) {
+	if o == nil || utils.IsNil(o.LastName) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *BaseName) GetLastName() string {
 // GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseName) GetLastNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.LastName) {
+	if o == nil || utils.IsNil(o.LastName) {
 		return nil, false
 	}
 	return o.LastName, true
@@ -97,7 +97,7 @@ func (o *BaseName) GetLastNameOk() (*string, bool) {
 
 // HasLastName returns a boolean if a field has been set.
 func (o *BaseName) HasLastName() bool {
-	if o != nil && !amadeus.IsNil(o.LastName) {
+	if o != nil && !utils.IsNil(o.LastName) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *BaseName) SetLastName(v string) {
 
 // GetMiddleName returns the MiddleName field value if set, zero value otherwise.
 func (o *BaseName) GetMiddleName() string {
-	if o == nil || amadeus.IsNil(o.MiddleName) {
+	if o == nil || utils.IsNil(o.MiddleName) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *BaseName) GetMiddleName() string {
 // GetMiddleNameOk returns a tuple with the MiddleName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseName) GetMiddleNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.MiddleName) {
+	if o == nil || utils.IsNil(o.MiddleName) {
 		return nil, false
 	}
 	return o.MiddleName, true
@@ -129,7 +129,7 @@ func (o *BaseName) GetMiddleNameOk() (*string, bool) {
 
 // HasMiddleName returns a boolean if a field has been set.
 func (o *BaseName) HasMiddleName() bool {
-	if o != nil && !amadeus.IsNil(o.MiddleName) {
+	if o != nil && !utils.IsNil(o.MiddleName) {
 		return true
 	}
 
@@ -151,13 +151,13 @@ func (o BaseName) MarshalJSON() ([]byte, error) {
 
 func (o BaseName) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.FirstName) {
+	if !utils.IsNil(o.FirstName) {
 		toSerialize["firstName"] = o.FirstName
 	}
-	if !amadeus.IsNil(o.LastName) {
+	if !utils.IsNil(o.LastName) {
 		toSerialize["lastName"] = o.LastName
 	}
-	if !amadeus.IsNil(o.MiddleName) {
+	if !utils.IsNil(o.MiddleName) {
 		toSerialize["middleName"] = o.MiddleName
 	}
 	return toSerialize, nil

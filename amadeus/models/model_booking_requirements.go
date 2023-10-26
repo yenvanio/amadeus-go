@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the BookingRequirements type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &BookingRequirements{}
+var _ utils.MappedNullable = &BookingRequirements{}
 
 // BookingRequirements pricing condition at booking level
 type BookingRequirements struct {
@@ -57,7 +57,7 @@ func NewBookingRequirementsWithDefaults() *BookingRequirements {
 
 // GetInvoiceAddressRequired returns the InvoiceAddressRequired field value if set, zero value otherwise.
 func (o *BookingRequirements) GetInvoiceAddressRequired() bool {
-	if o == nil || amadeus.IsNil(o.InvoiceAddressRequired) {
+	if o == nil || utils.IsNil(o.InvoiceAddressRequired) {
 		var ret bool
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *BookingRequirements) GetInvoiceAddressRequired() bool {
 // GetInvoiceAddressRequiredOk returns a tuple with the InvoiceAddressRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookingRequirements) GetInvoiceAddressRequiredOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.InvoiceAddressRequired) {
+	if o == nil || utils.IsNil(o.InvoiceAddressRequired) {
 		return nil, false
 	}
 	return o.InvoiceAddressRequired, true
@@ -75,7 +75,7 @@ func (o *BookingRequirements) GetInvoiceAddressRequiredOk() (*bool, bool) {
 
 // HasInvoiceAddressRequired returns a boolean if a field has been set.
 func (o *BookingRequirements) HasInvoiceAddressRequired() bool {
-	if o != nil && !amadeus.IsNil(o.InvoiceAddressRequired) {
+	if o != nil && !utils.IsNil(o.InvoiceAddressRequired) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *BookingRequirements) SetInvoiceAddressRequired(v bool) {
 
 // GetMailingAddressRequired returns the MailingAddressRequired field value if set, zero value otherwise.
 func (o *BookingRequirements) GetMailingAddressRequired() bool {
-	if o == nil || amadeus.IsNil(o.MailingAddressRequired) {
+	if o == nil || utils.IsNil(o.MailingAddressRequired) {
 		var ret bool
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *BookingRequirements) GetMailingAddressRequired() bool {
 // GetMailingAddressRequiredOk returns a tuple with the MailingAddressRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookingRequirements) GetMailingAddressRequiredOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.MailingAddressRequired) {
+	if o == nil || utils.IsNil(o.MailingAddressRequired) {
 		return nil, false
 	}
 	return o.MailingAddressRequired, true
@@ -107,7 +107,7 @@ func (o *BookingRequirements) GetMailingAddressRequiredOk() (*bool, bool) {
 
 // HasMailingAddressRequired returns a boolean if a field has been set.
 func (o *BookingRequirements) HasMailingAddressRequired() bool {
-	if o != nil && !amadeus.IsNil(o.MailingAddressRequired) {
+	if o != nil && !utils.IsNil(o.MailingAddressRequired) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *BookingRequirements) SetMailingAddressRequired(v bool) {
 
 // GetEmailAddressRequired returns the EmailAddressRequired field value if set, zero value otherwise.
 func (o *BookingRequirements) GetEmailAddressRequired() bool {
-	if o == nil || amadeus.IsNil(o.EmailAddressRequired) {
+	if o == nil || utils.IsNil(o.EmailAddressRequired) {
 		var ret bool
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *BookingRequirements) GetEmailAddressRequired() bool {
 // GetEmailAddressRequiredOk returns a tuple with the EmailAddressRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookingRequirements) GetEmailAddressRequiredOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.EmailAddressRequired) {
+	if o == nil || utils.IsNil(o.EmailAddressRequired) {
 		return nil, false
 	}
 	return o.EmailAddressRequired, true
@@ -139,7 +139,7 @@ func (o *BookingRequirements) GetEmailAddressRequiredOk() (*bool, bool) {
 
 // HasEmailAddressRequired returns a boolean if a field has been set.
 func (o *BookingRequirements) HasEmailAddressRequired() bool {
-	if o != nil && !amadeus.IsNil(o.EmailAddressRequired) {
+	if o != nil && !utils.IsNil(o.EmailAddressRequired) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *BookingRequirements) SetEmailAddressRequired(v bool) {
 
 // GetPhoneCountryCodeRequired returns the PhoneCountryCodeRequired field value if set, zero value otherwise.
 func (o *BookingRequirements) GetPhoneCountryCodeRequired() bool {
-	if o == nil || amadeus.IsNil(o.PhoneCountryCodeRequired) {
+	if o == nil || utils.IsNil(o.PhoneCountryCodeRequired) {
 		var ret bool
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *BookingRequirements) GetPhoneCountryCodeRequired() bool {
 // GetPhoneCountryCodeRequiredOk returns a tuple with the PhoneCountryCodeRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookingRequirements) GetPhoneCountryCodeRequiredOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.PhoneCountryCodeRequired) {
+	if o == nil || utils.IsNil(o.PhoneCountryCodeRequired) {
 		return nil, false
 	}
 	return o.PhoneCountryCodeRequired, true
@@ -171,7 +171,7 @@ func (o *BookingRequirements) GetPhoneCountryCodeRequiredOk() (*bool, bool) {
 
 // HasPhoneCountryCodeRequired returns a boolean if a field has been set.
 func (o *BookingRequirements) HasPhoneCountryCodeRequired() bool {
-	if o != nil && !amadeus.IsNil(o.PhoneCountryCodeRequired) {
+	if o != nil && !utils.IsNil(o.PhoneCountryCodeRequired) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *BookingRequirements) SetPhoneCountryCodeRequired(v bool) {
 
 // GetMobilePhoneNumberRequired returns the MobilePhoneNumberRequired field value if set, zero value otherwise.
 func (o *BookingRequirements) GetMobilePhoneNumberRequired() bool {
-	if o == nil || amadeus.IsNil(o.MobilePhoneNumberRequired) {
+	if o == nil || utils.IsNil(o.MobilePhoneNumberRequired) {
 		var ret bool
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *BookingRequirements) GetMobilePhoneNumberRequired() bool {
 // GetMobilePhoneNumberRequiredOk returns a tuple with the MobilePhoneNumberRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookingRequirements) GetMobilePhoneNumberRequiredOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.MobilePhoneNumberRequired) {
+	if o == nil || utils.IsNil(o.MobilePhoneNumberRequired) {
 		return nil, false
 	}
 	return o.MobilePhoneNumberRequired, true
@@ -203,7 +203,7 @@ func (o *BookingRequirements) GetMobilePhoneNumberRequiredOk() (*bool, bool) {
 
 // HasMobilePhoneNumberRequired returns a boolean if a field has been set.
 func (o *BookingRequirements) HasMobilePhoneNumberRequired() bool {
-	if o != nil && !amadeus.IsNil(o.MobilePhoneNumberRequired) {
+	if o != nil && !utils.IsNil(o.MobilePhoneNumberRequired) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *BookingRequirements) SetMobilePhoneNumberRequired(v bool) {
 
 // GetPhoneNumberRequired returns the PhoneNumberRequired field value if set, zero value otherwise.
 func (o *BookingRequirements) GetPhoneNumberRequired() bool {
-	if o == nil || amadeus.IsNil(o.PhoneNumberRequired) {
+	if o == nil || utils.IsNil(o.PhoneNumberRequired) {
 		var ret bool
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *BookingRequirements) GetPhoneNumberRequired() bool {
 // GetPhoneNumberRequiredOk returns a tuple with the PhoneNumberRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookingRequirements) GetPhoneNumberRequiredOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.PhoneNumberRequired) {
+	if o == nil || utils.IsNil(o.PhoneNumberRequired) {
 		return nil, false
 	}
 	return o.PhoneNumberRequired, true
@@ -235,7 +235,7 @@ func (o *BookingRequirements) GetPhoneNumberRequiredOk() (*bool, bool) {
 
 // HasPhoneNumberRequired returns a boolean if a field has been set.
 func (o *BookingRequirements) HasPhoneNumberRequired() bool {
-	if o != nil && !amadeus.IsNil(o.PhoneNumberRequired) {
+	if o != nil && !utils.IsNil(o.PhoneNumberRequired) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *BookingRequirements) SetPhoneNumberRequired(v bool) {
 
 // GetPostalCodeRequired returns the PostalCodeRequired field value if set, zero value otherwise.
 func (o *BookingRequirements) GetPostalCodeRequired() bool {
-	if o == nil || amadeus.IsNil(o.PostalCodeRequired) {
+	if o == nil || utils.IsNil(o.PostalCodeRequired) {
 		var ret bool
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *BookingRequirements) GetPostalCodeRequired() bool {
 // GetPostalCodeRequiredOk returns a tuple with the PostalCodeRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookingRequirements) GetPostalCodeRequiredOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.PostalCodeRequired) {
+	if o == nil || utils.IsNil(o.PostalCodeRequired) {
 		return nil, false
 	}
 	return o.PostalCodeRequired, true
@@ -267,7 +267,7 @@ func (o *BookingRequirements) GetPostalCodeRequiredOk() (*bool, bool) {
 
 // HasPostalCodeRequired returns a boolean if a field has been set.
 func (o *BookingRequirements) HasPostalCodeRequired() bool {
-	if o != nil && !amadeus.IsNil(o.PostalCodeRequired) {
+	if o != nil && !utils.IsNil(o.PostalCodeRequired) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *BookingRequirements) SetPostalCodeRequired(v bool) {
 
 // GetTravelerRequirements returns the TravelerRequirements field value if set, zero value otherwise.
 func (o *BookingRequirements) GetTravelerRequirements() []PassengerConditions {
-	if o == nil || amadeus.IsNil(o.TravelerRequirements) {
+	if o == nil || utils.IsNil(o.TravelerRequirements) {
 		var ret []PassengerConditions
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *BookingRequirements) GetTravelerRequirements() []PassengerConditions {
 // GetTravelerRequirementsOk returns a tuple with the TravelerRequirements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BookingRequirements) GetTravelerRequirementsOk() ([]PassengerConditions, bool) {
-	if o == nil || amadeus.IsNil(o.TravelerRequirements) {
+	if o == nil || utils.IsNil(o.TravelerRequirements) {
 		return nil, false
 	}
 	return o.TravelerRequirements, true
@@ -299,7 +299,7 @@ func (o *BookingRequirements) GetTravelerRequirementsOk() ([]PassengerConditions
 
 // HasTravelerRequirements returns a boolean if a field has been set.
 func (o *BookingRequirements) HasTravelerRequirements() bool {
-	if o != nil && !amadeus.IsNil(o.TravelerRequirements) {
+	if o != nil && !utils.IsNil(o.TravelerRequirements) {
 		return true
 	}
 
@@ -321,28 +321,28 @@ func (o BookingRequirements) MarshalJSON() ([]byte, error) {
 
 func (o BookingRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.InvoiceAddressRequired) {
+	if !utils.IsNil(o.InvoiceAddressRequired) {
 		toSerialize["invoiceAddressRequired"] = o.InvoiceAddressRequired
 	}
-	if !amadeus.IsNil(o.MailingAddressRequired) {
+	if !utils.IsNil(o.MailingAddressRequired) {
 		toSerialize["mailingAddressRequired"] = o.MailingAddressRequired
 	}
-	if !amadeus.IsNil(o.EmailAddressRequired) {
+	if !utils.IsNil(o.EmailAddressRequired) {
 		toSerialize["emailAddressRequired"] = o.EmailAddressRequired
 	}
-	if !amadeus.IsNil(o.PhoneCountryCodeRequired) {
+	if !utils.IsNil(o.PhoneCountryCodeRequired) {
 		toSerialize["phoneCountryCodeRequired"] = o.PhoneCountryCodeRequired
 	}
-	if !amadeus.IsNil(o.MobilePhoneNumberRequired) {
+	if !utils.IsNil(o.MobilePhoneNumberRequired) {
 		toSerialize["mobilePhoneNumberRequired"] = o.MobilePhoneNumberRequired
 	}
-	if !amadeus.IsNil(o.PhoneNumberRequired) {
+	if !utils.IsNil(o.PhoneNumberRequired) {
 		toSerialize["phoneNumberRequired"] = o.PhoneNumberRequired
 	}
-	if !amadeus.IsNil(o.PostalCodeRequired) {
+	if !utils.IsNil(o.PostalCodeRequired) {
 		toSerialize["postalCodeRequired"] = o.PostalCodeRequired
 	}
-	if !amadeus.IsNil(o.TravelerRequirements) {
+	if !utils.IsNil(o.TravelerRequirements) {
 		toSerialize["travelerRequirements"] = o.TravelerRequirements
 	}
 	return toSerialize, nil

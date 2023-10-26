@@ -20,7 +20,7 @@ type PaymentBrand string
 
 // List of PaymentBrand
 const (
-	VISA               PaymentBrand = "VISA"
+	VISA_PAYMENT_BRAND PaymentBrand = "VISA"
 	AMERICAN_EXPRESS   PaymentBrand = "AMERICAN_EXPRESS"
 	MASTERCARD         PaymentBrand = "MASTERCARD"
 	VISA_ELECTRON      PaymentBrand = "VISA_ELECTRON"
@@ -128,4 +128,3 @@ func (v *NullablePaymentBrand) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

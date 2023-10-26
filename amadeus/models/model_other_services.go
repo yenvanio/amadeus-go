@@ -12,16 +12,15 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the OtherServices type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &OtherServices{}
+var _ utils.MappedNullable = &OtherServices{}
 
 // OtherServices struct for OtherServices
 type OtherServices struct {
-	Name *openapi.ServiceName `json:"name,omitempty"`
+	Name *ServiceName `json:"name,omitempty"`
 	Price *ElementaryPrice    `json:"price,omitempty"`
 	// Specify if the service is bookable by traveler or for all travelers
 	BookableByTraveler *bool `json:"bookableByTraveler,omitempty"`
@@ -51,9 +50,9 @@ func NewOtherServicesWithDefaults() *OtherServices {
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *OtherServices) GetName() openapi.ServiceName {
-	if o == nil || amadeus.IsNil(o.Name) {
-		var ret openapi.ServiceName
+func (o *OtherServices) GetName() ServiceName {
+	if o == nil || utils.IsNil(o.Name) {
+		var ret ServiceName
 		return ret
 	}
 	return *o.Name
@@ -61,8 +60,8 @@ func (o *OtherServices) GetName() openapi.ServiceName {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OtherServices) GetNameOk() (*openapi.ServiceName, bool) {
-	if o == nil || amadeus.IsNil(o.Name) {
+func (o *OtherServices) GetNameOk() (*ServiceName, bool) {
+	if o == nil || utils.IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -70,7 +69,7 @@ func (o *OtherServices) GetNameOk() (*openapi.ServiceName, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OtherServices) HasName() bool {
-	if o != nil && !amadeus.IsNil(o.Name) {
+	if o != nil && !utils.IsNil(o.Name) {
 		return true
 	}
 
@@ -78,13 +77,13 @@ func (o *OtherServices) HasName() bool {
 }
 
 // SetName gets a reference to the given ServiceName and assigns it to the Name field.
-func (o *OtherServices) SetName(v openapi.ServiceName) {
+func (o *OtherServices) SetName(v ServiceName) {
 	o.Name = &v
 }
 
 // GetPrice returns the Price field value if set, zero value otherwise.
 func (o *OtherServices) GetPrice() ElementaryPrice {
-	if o == nil || amadeus.IsNil(o.Price) {
+	if o == nil || utils.IsNil(o.Price) {
 		var ret ElementaryPrice
 		return ret
 	}
@@ -94,7 +93,7 @@ func (o *OtherServices) GetPrice() ElementaryPrice {
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OtherServices) GetPriceOk() (*ElementaryPrice, bool) {
-	if o == nil || amadeus.IsNil(o.Price) {
+	if o == nil || utils.IsNil(o.Price) {
 		return nil, false
 	}
 	return o.Price, true
@@ -102,7 +101,7 @@ func (o *OtherServices) GetPriceOk() (*ElementaryPrice, bool) {
 
 // HasPrice returns a boolean if a field has been set.
 func (o *OtherServices) HasPrice() bool {
-	if o != nil && !amadeus.IsNil(o.Price) {
+	if o != nil && !utils.IsNil(o.Price) {
 		return true
 	}
 
@@ -116,7 +115,7 @@ func (o *OtherServices) SetPrice(v ElementaryPrice) {
 
 // GetBookableByTraveler returns the BookableByTraveler field value if set, zero value otherwise.
 func (o *OtherServices) GetBookableByTraveler() bool {
-	if o == nil || amadeus.IsNil(o.BookableByTraveler) {
+	if o == nil || utils.IsNil(o.BookableByTraveler) {
 		var ret bool
 		return ret
 	}
@@ -126,7 +125,7 @@ func (o *OtherServices) GetBookableByTraveler() bool {
 // GetBookableByTravelerOk returns a tuple with the BookableByTraveler field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OtherServices) GetBookableByTravelerOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.BookableByTraveler) {
+	if o == nil || utils.IsNil(o.BookableByTraveler) {
 		return nil, false
 	}
 	return o.BookableByTraveler, true
@@ -134,7 +133,7 @@ func (o *OtherServices) GetBookableByTravelerOk() (*bool, bool) {
 
 // HasBookableByTraveler returns a boolean if a field has been set.
 func (o *OtherServices) HasBookableByTraveler() bool {
-	if o != nil && !amadeus.IsNil(o.BookableByTraveler) {
+	if o != nil && !utils.IsNil(o.BookableByTraveler) {
 		return true
 	}
 
@@ -148,7 +147,7 @@ func (o *OtherServices) SetBookableByTraveler(v bool) {
 
 // GetBookableByItinerary returns the BookableByItinerary field value if set, zero value otherwise.
 func (o *OtherServices) GetBookableByItinerary() bool {
-	if o == nil || amadeus.IsNil(o.BookableByItinerary) {
+	if o == nil || utils.IsNil(o.BookableByItinerary) {
 		var ret bool
 		return ret
 	}
@@ -158,7 +157,7 @@ func (o *OtherServices) GetBookableByItinerary() bool {
 // GetBookableByItineraryOk returns a tuple with the BookableByItinerary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OtherServices) GetBookableByItineraryOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.BookableByItinerary) {
+	if o == nil || utils.IsNil(o.BookableByItinerary) {
 		return nil, false
 	}
 	return o.BookableByItinerary, true
@@ -166,7 +165,7 @@ func (o *OtherServices) GetBookableByItineraryOk() (*bool, bool) {
 
 // HasBookableByItinerary returns a boolean if a field has been set.
 func (o *OtherServices) HasBookableByItinerary() bool {
-	if o != nil && !amadeus.IsNil(o.BookableByItinerary) {
+	if o != nil && !utils.IsNil(o.BookableByItinerary) {
 		return true
 	}
 
@@ -180,7 +179,7 @@ func (o *OtherServices) SetBookableByItinerary(v bool) {
 
 // GetSegmentIds returns the SegmentIds field value if set, zero value otherwise.
 func (o *OtherServices) GetSegmentIds() []string {
-	if o == nil || amadeus.IsNil(o.SegmentIds) {
+	if o == nil || utils.IsNil(o.SegmentIds) {
 		var ret []string
 		return ret
 	}
@@ -190,7 +189,7 @@ func (o *OtherServices) GetSegmentIds() []string {
 // GetSegmentIdsOk returns a tuple with the SegmentIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OtherServices) GetSegmentIdsOk() ([]string, bool) {
-	if o == nil || amadeus.IsNil(o.SegmentIds) {
+	if o == nil || utils.IsNil(o.SegmentIds) {
 		return nil, false
 	}
 	return o.SegmentIds, true
@@ -198,7 +197,7 @@ func (o *OtherServices) GetSegmentIdsOk() ([]string, bool) {
 
 // HasSegmentIds returns a boolean if a field has been set.
 func (o *OtherServices) HasSegmentIds() bool {
-	if o != nil && !amadeus.IsNil(o.SegmentIds) {
+	if o != nil && !utils.IsNil(o.SegmentIds) {
 		return true
 	}
 
@@ -212,7 +211,7 @@ func (o *OtherServices) SetSegmentIds(v []string) {
 
 // GetTravelerIds returns the TravelerIds field value if set, zero value otherwise.
 func (o *OtherServices) GetTravelerIds() []string {
-	if o == nil || amadeus.IsNil(o.TravelerIds) {
+	if o == nil || utils.IsNil(o.TravelerIds) {
 		var ret []string
 		return ret
 	}
@@ -222,7 +221,7 @@ func (o *OtherServices) GetTravelerIds() []string {
 // GetTravelerIdsOk returns a tuple with the TravelerIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OtherServices) GetTravelerIdsOk() ([]string, bool) {
-	if o == nil || amadeus.IsNil(o.TravelerIds) {
+	if o == nil || utils.IsNil(o.TravelerIds) {
 		return nil, false
 	}
 	return o.TravelerIds, true
@@ -230,7 +229,7 @@ func (o *OtherServices) GetTravelerIdsOk() ([]string, bool) {
 
 // HasTravelerIds returns a boolean if a field has been set.
 func (o *OtherServices) HasTravelerIds() bool {
-	if o != nil && !amadeus.IsNil(o.TravelerIds) {
+	if o != nil && !utils.IsNil(o.TravelerIds) {
 		return true
 	}
 
@@ -252,22 +251,22 @@ func (o OtherServices) MarshalJSON() ([]byte, error) {
 
 func (o OtherServices) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Name) {
+	if !utils.IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !amadeus.IsNil(o.Price) {
+	if !utils.IsNil(o.Price) {
 		toSerialize["price"] = o.Price
 	}
-	if !amadeus.IsNil(o.BookableByTraveler) {
+	if !utils.IsNil(o.BookableByTraveler) {
 		toSerialize["bookableByTraveler"] = o.BookableByTraveler
 	}
-	if !amadeus.IsNil(o.BookableByItinerary) {
+	if !utils.IsNil(o.BookableByItinerary) {
 		toSerialize["bookableByItinerary"] = o.BookableByItinerary
 	}
-	if !amadeus.IsNil(o.SegmentIds) {
+	if !utils.IsNil(o.SegmentIds) {
 		toSerialize["segmentIds"] = o.SegmentIds
 	}
-	if !amadeus.IsNil(o.TravelerIds) {
+	if !utils.IsNil(o.TravelerIds) {
 		toSerialize["travelerIds"] = o.TravelerIds
 	}
 	return toSerialize, nil

@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Description type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Description{}
+var _ utils.MappedNullable = &Description{}
 
 // Description struct for Description
 type Description struct {
@@ -43,7 +43,7 @@ func NewDescriptionWithDefaults() *Description {
 
 // GetDescriptionType returns the DescriptionType field value if set, zero value otherwise.
 func (o *Description) GetDescriptionType() string {
-	if o == nil || amadeus.IsNil(o.DescriptionType) {
+	if o == nil || utils.IsNil(o.DescriptionType) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *Description) GetDescriptionType() string {
 // GetDescriptionTypeOk returns a tuple with the DescriptionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Description) GetDescriptionTypeOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.DescriptionType) {
+	if o == nil || utils.IsNil(o.DescriptionType) {
 		return nil, false
 	}
 	return o.DescriptionType, true
@@ -61,7 +61,7 @@ func (o *Description) GetDescriptionTypeOk() (*string, bool) {
 
 // HasDescriptionType returns a boolean if a field has been set.
 func (o *Description) HasDescriptionType() bool {
-	if o != nil && !amadeus.IsNil(o.DescriptionType) {
+	if o != nil && !utils.IsNil(o.DescriptionType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *Description) SetDescriptionType(v string) {
 
 // GetText returns the Text field value if set, zero value otherwise.
 func (o *Description) GetText() string {
-	if o == nil || amadeus.IsNil(o.Text) {
+	if o == nil || utils.IsNil(o.Text) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *Description) GetText() string {
 // GetTextOk returns a tuple with the Text field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Description) GetTextOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Text) {
+	if o == nil || utils.IsNil(o.Text) {
 		return nil, false
 	}
 	return o.Text, true
@@ -93,7 +93,7 @@ func (o *Description) GetTextOk() (*string, bool) {
 
 // HasText returns a boolean if a field has been set.
 func (o *Description) HasText() bool {
-	if o != nil && !amadeus.IsNil(o.Text) {
+	if o != nil && !utils.IsNil(o.Text) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o Description) MarshalJSON() ([]byte, error) {
 
 func (o Description) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.DescriptionType) {
+	if !utils.IsNil(o.DescriptionType) {
 		toSerialize["descriptionType"] = o.DescriptionType
 	}
-	if !amadeus.IsNil(o.Text) {
+	if !utils.IsNil(o.Text) {
 		toSerialize["text"] = o.Text
 	}
 	return toSerialize, nil

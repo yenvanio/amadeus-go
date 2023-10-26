@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Traveler type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Traveler{}
+var _ utils.MappedNullable = &Traveler{}
 
 // Traveler the traveler of the trip
 type Traveler struct {
@@ -55,7 +55,7 @@ func NewTravelerWithDefaults() *Traveler {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *Traveler) GetId() string {
-	if o == nil || amadeus.IsNil(o.Id) {
+	if o == nil || utils.IsNil(o.Id) {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *Traveler) GetId() string {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetIdOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Id) {
+	if o == nil || utils.IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -73,7 +73,7 @@ func (o *Traveler) GetIdOk() (*string, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *Traveler) HasId() bool {
-	if o != nil && !amadeus.IsNil(o.Id) {
+	if o != nil && !utils.IsNil(o.Id) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *Traveler) SetId(v string) {
 
 // GetDateOfBirth returns the DateOfBirth field value if set, zero value otherwise.
 func (o *Traveler) GetDateOfBirth() string {
-	if o == nil || amadeus.IsNil(o.DateOfBirth) {
+	if o == nil || utils.IsNil(o.DateOfBirth) {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *Traveler) GetDateOfBirth() string {
 // GetDateOfBirthOk returns a tuple with the DateOfBirth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetDateOfBirthOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.DateOfBirth) {
+	if o == nil || utils.IsNil(o.DateOfBirth) {
 		return nil, false
 	}
 	return o.DateOfBirth, true
@@ -105,7 +105,7 @@ func (o *Traveler) GetDateOfBirthOk() (*string, bool) {
 
 // HasDateOfBirth returns a boolean if a field has been set.
 func (o *Traveler) HasDateOfBirth() bool {
-	if o != nil && !amadeus.IsNil(o.DateOfBirth) {
+	if o != nil && !utils.IsNil(o.DateOfBirth) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *Traveler) SetDateOfBirth(v string) {
 
 // GetGender returns the Gender field value if set, zero value otherwise.
 func (o *Traveler) GetGender() StakeholderGender {
-	if o == nil || amadeus.IsNil(o.Gender) {
+	if o == nil || utils.IsNil(o.Gender) {
 		var ret StakeholderGender
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *Traveler) GetGender() StakeholderGender {
 // GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetGenderOk() (*StakeholderGender, bool) {
-	if o == nil || amadeus.IsNil(o.Gender) {
+	if o == nil || utils.IsNil(o.Gender) {
 		return nil, false
 	}
 	return o.Gender, true
@@ -137,7 +137,7 @@ func (o *Traveler) GetGenderOk() (*StakeholderGender, bool) {
 
 // HasGender returns a boolean if a field has been set.
 func (o *Traveler) HasGender() bool {
-	if o != nil && !amadeus.IsNil(o.Gender) {
+	if o != nil && !utils.IsNil(o.Gender) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *Traveler) SetGender(v StakeholderGender) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Traveler) GetName() Name {
-	if o == nil || amadeus.IsNil(o.Name) {
+	if o == nil || utils.IsNil(o.Name) {
 		var ret Name
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *Traveler) GetName() Name {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetNameOk() (*Name, bool) {
-	if o == nil || amadeus.IsNil(o.Name) {
+	if o == nil || utils.IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -169,7 +169,7 @@ func (o *Traveler) GetNameOk() (*Name, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *Traveler) HasName() bool {
-	if o != nil && !amadeus.IsNil(o.Name) {
+	if o != nil && !utils.IsNil(o.Name) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *Traveler) SetName(v Name) {
 
 // GetDocuments returns the Documents field value if set, zero value otherwise.
 func (o *Traveler) GetDocuments() []IdentityDocument {
-	if o == nil || amadeus.IsNil(o.Documents) {
+	if o == nil || utils.IsNil(o.Documents) {
 		var ret []IdentityDocument
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *Traveler) GetDocuments() []IdentityDocument {
 // GetDocumentsOk returns a tuple with the Documents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetDocumentsOk() ([]IdentityDocument, bool) {
-	if o == nil || amadeus.IsNil(o.Documents) {
+	if o == nil || utils.IsNil(o.Documents) {
 		return nil, false
 	}
 	return o.Documents, true
@@ -201,7 +201,7 @@ func (o *Traveler) GetDocumentsOk() ([]IdentityDocument, bool) {
 
 // HasDocuments returns a boolean if a field has been set.
 func (o *Traveler) HasDocuments() bool {
-	if o != nil && !amadeus.IsNil(o.Documents) {
+	if o != nil && !utils.IsNil(o.Documents) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *Traveler) SetDocuments(v []IdentityDocument) {
 
 // GetEmergencyContact returns the EmergencyContact field value if set, zero value otherwise.
 func (o *Traveler) GetEmergencyContact() EmergencyContact {
-	if o == nil || amadeus.IsNil(o.EmergencyContact) {
+	if o == nil || utils.IsNil(o.EmergencyContact) {
 		var ret EmergencyContact
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *Traveler) GetEmergencyContact() EmergencyContact {
 // GetEmergencyContactOk returns a tuple with the EmergencyContact field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetEmergencyContactOk() (*EmergencyContact, bool) {
-	if o == nil || amadeus.IsNil(o.EmergencyContact) {
+	if o == nil || utils.IsNil(o.EmergencyContact) {
 		return nil, false
 	}
 	return o.EmergencyContact, true
@@ -233,7 +233,7 @@ func (o *Traveler) GetEmergencyContactOk() (*EmergencyContact, bool) {
 
 // HasEmergencyContact returns a boolean if a field has been set.
 func (o *Traveler) HasEmergencyContact() bool {
-	if o != nil && !amadeus.IsNil(o.EmergencyContact) {
+	if o != nil && !utils.IsNil(o.EmergencyContact) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *Traveler) SetEmergencyContact(v EmergencyContact) {
 
 // GetLoyaltyPrograms returns the LoyaltyPrograms field value if set, zero value otherwise.
 func (o *Traveler) GetLoyaltyPrograms() []LoyaltyProgram {
-	if o == nil || amadeus.IsNil(o.LoyaltyPrograms) {
+	if o == nil || utils.IsNil(o.LoyaltyPrograms) {
 		var ret []LoyaltyProgram
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *Traveler) GetLoyaltyPrograms() []LoyaltyProgram {
 // GetLoyaltyProgramsOk returns a tuple with the LoyaltyPrograms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetLoyaltyProgramsOk() ([]LoyaltyProgram, bool) {
-	if o == nil || amadeus.IsNil(o.LoyaltyPrograms) {
+	if o == nil || utils.IsNil(o.LoyaltyPrograms) {
 		return nil, false
 	}
 	return o.LoyaltyPrograms, true
@@ -265,7 +265,7 @@ func (o *Traveler) GetLoyaltyProgramsOk() ([]LoyaltyProgram, bool) {
 
 // HasLoyaltyPrograms returns a boolean if a field has been set.
 func (o *Traveler) HasLoyaltyPrograms() bool {
-	if o != nil && !amadeus.IsNil(o.LoyaltyPrograms) {
+	if o != nil && !utils.IsNil(o.LoyaltyPrograms) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *Traveler) SetLoyaltyPrograms(v []LoyaltyProgram) {
 
 // GetDiscountEligibility returns the DiscountEligibility field value if set, zero value otherwise.
 func (o *Traveler) GetDiscountEligibility() []Discount {
-	if o == nil || amadeus.IsNil(o.DiscountEligibility) {
+	if o == nil || utils.IsNil(o.DiscountEligibility) {
 		var ret []Discount
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *Traveler) GetDiscountEligibility() []Discount {
 // GetDiscountEligibilityOk returns a tuple with the DiscountEligibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetDiscountEligibilityOk() ([]Discount, bool) {
-	if o == nil || amadeus.IsNil(o.DiscountEligibility) {
+	if o == nil || utils.IsNil(o.DiscountEligibility) {
 		return nil, false
 	}
 	return o.DiscountEligibility, true
@@ -297,7 +297,7 @@ func (o *Traveler) GetDiscountEligibilityOk() ([]Discount, bool) {
 
 // HasDiscountEligibility returns a boolean if a field has been set.
 func (o *Traveler) HasDiscountEligibility() bool {
-	if o != nil && !amadeus.IsNil(o.DiscountEligibility) {
+	if o != nil && !utils.IsNil(o.DiscountEligibility) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *Traveler) SetDiscountEligibility(v []Discount) {
 
 // GetContact returns the Contact field value if set, zero value otherwise.
 func (o *Traveler) GetContact() Contact {
-	if o == nil || amadeus.IsNil(o.Contact) {
+	if o == nil || utils.IsNil(o.Contact) {
 		var ret Contact
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *Traveler) GetContact() Contact {
 // GetContactOk returns a tuple with the Contact field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Traveler) GetContactOk() (*Contact, bool) {
-	if o == nil || amadeus.IsNil(o.Contact) {
+	if o == nil || utils.IsNil(o.Contact) {
 		return nil, false
 	}
 	return o.Contact, true
@@ -329,7 +329,7 @@ func (o *Traveler) GetContactOk() (*Contact, bool) {
 
 // HasContact returns a boolean if a field has been set.
 func (o *Traveler) HasContact() bool {
-	if o != nil && !amadeus.IsNil(o.Contact) {
+	if o != nil && !utils.IsNil(o.Contact) {
 		return true
 	}
 
@@ -351,31 +351,31 @@ func (o Traveler) MarshalJSON() ([]byte, error) {
 
 func (o Traveler) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Id) {
+	if !utils.IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !amadeus.IsNil(o.DateOfBirth) {
+	if !utils.IsNil(o.DateOfBirth) {
 		toSerialize["dateOfBirth"] = o.DateOfBirth
 	}
-	if !amadeus.IsNil(o.Gender) {
+	if !utils.IsNil(o.Gender) {
 		toSerialize["gender"] = o.Gender
 	}
-	if !amadeus.IsNil(o.Name) {
+	if !utils.IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !amadeus.IsNil(o.Documents) {
+	if !utils.IsNil(o.Documents) {
 		toSerialize["documents"] = o.Documents
 	}
-	if !amadeus.IsNil(o.EmergencyContact) {
+	if !utils.IsNil(o.EmergencyContact) {
 		toSerialize["emergencyContact"] = o.EmergencyContact
 	}
-	if !amadeus.IsNil(o.LoyaltyPrograms) {
+	if !utils.IsNil(o.LoyaltyPrograms) {
 		toSerialize["loyaltyPrograms"] = o.LoyaltyPrograms
 	}
-	if !amadeus.IsNil(o.DiscountEligibility) {
+	if !utils.IsNil(o.DiscountEligibility) {
 		toSerialize["discountEligibility"] = o.DiscountEligibility
 	}
-	if !amadeus.IsNil(o.Contact) {
+	if !utils.IsNil(o.Contact) {
 		toSerialize["contact"] = o.Contact
 	}
 	return toSerialize, nil

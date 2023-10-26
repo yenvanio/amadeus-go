@@ -1,7 +1,7 @@
 /*
 Amadeus OAuth2 Login
 
-Amadeus for Developers uses OAuth2 to authenticate access requests. OAuth2 generates an access token which grants the client permission to access a protected resource. The method to acquire a token is called grant. There are different types of OAuth2 grants. Amadeus for Developers uses the Client Credentials Grant.   https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262 
+Amadeus for Developers uses OAuth2 to authenticate access requests. OAuth2 generates an access token which grants the api permission to access a protected resource. The method to acquire a token is called grant. There are different types of OAuth2 grants. Amadeus for Developers uses the Client Credentials Grant.   https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262
 
 API version: 1.0.0
 */
@@ -12,10 +12,11 @@ package models
 
 import (
 	"encoding/json"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the AmadeusOAuth2Token type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AmadeusOAuth2Token{}
+var _ utils.MappedNullable = &AmadeusOAuth2Token{}
 
 // AmadeusOAuth2Token The token response
 type AmadeusOAuth2Token struct {
@@ -58,7 +59,7 @@ func NewAmadeusOAuth2TokenWithDefaults() *AmadeusOAuth2Token {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetType() string {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || utils.IsNil(o.Type) {
 		var ret string
 		return ret
 	}
@@ -68,7 +69,7 @@ func (o *AmadeusOAuth2Token) GetType() string {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || utils.IsNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -76,7 +77,7 @@ func (o *AmadeusOAuth2Token) GetTypeOk() (*string, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && !utils.IsNil(o.Type) {
 		return true
 	}
 
@@ -90,7 +91,7 @@ func (o *AmadeusOAuth2Token) SetType(v string) {
 
 // GetUsername returns the Username field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetUsername() string {
-	if o == nil || IsNil(o.Username) {
+	if o == nil || utils.IsNil(o.Username) {
 		var ret string
 		return ret
 	}
@@ -100,7 +101,7 @@ func (o *AmadeusOAuth2Token) GetUsername() string {
 // GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetUsernameOk() (*string, bool) {
-	if o == nil || IsNil(o.Username) {
+	if o == nil || utils.IsNil(o.Username) {
 		return nil, false
 	}
 	return o.Username, true
@@ -108,7 +109,7 @@ func (o *AmadeusOAuth2Token) GetUsernameOk() (*string, bool) {
 
 // HasUsername returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasUsername() bool {
-	if o != nil && !IsNil(o.Username) {
+	if o != nil && !utils.IsNil(o.Username) {
 		return true
 	}
 
@@ -122,7 +123,7 @@ func (o *AmadeusOAuth2Token) SetUsername(v string) {
 
 // GetApplicationName returns the ApplicationName field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetApplicationName() string {
-	if o == nil || IsNil(o.ApplicationName) {
+	if o == nil || utils.IsNil(o.ApplicationName) {
 		var ret string
 		return ret
 	}
@@ -132,7 +133,7 @@ func (o *AmadeusOAuth2Token) GetApplicationName() string {
 // GetApplicationNameOk returns a tuple with the ApplicationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetApplicationNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ApplicationName) {
+	if o == nil || utils.IsNil(o.ApplicationName) {
 		return nil, false
 	}
 	return o.ApplicationName, true
@@ -140,7 +141,7 @@ func (o *AmadeusOAuth2Token) GetApplicationNameOk() (*string, bool) {
 
 // HasApplicationName returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasApplicationName() bool {
-	if o != nil && !IsNil(o.ApplicationName) {
+	if o != nil && !utils.IsNil(o.ApplicationName) {
 		return true
 	}
 
@@ -154,7 +155,7 @@ func (o *AmadeusOAuth2Token) SetApplicationName(v string) {
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetClientId() string {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil || utils.IsNil(o.ClientId) {
 		var ret string
 		return ret
 	}
@@ -164,7 +165,7 @@ func (o *AmadeusOAuth2Token) GetClientId() string {
 // GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetClientIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ClientId) {
+	if o == nil || utils.IsNil(o.ClientId) {
 		return nil, false
 	}
 	return o.ClientId, true
@@ -172,7 +173,7 @@ func (o *AmadeusOAuth2Token) GetClientIdOk() (*string, bool) {
 
 // HasClientId returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasClientId() bool {
-	if o != nil && !IsNil(o.ClientId) {
+	if o != nil && !utils.IsNil(o.ClientId) {
 		return true
 	}
 
@@ -186,7 +187,7 @@ func (o *AmadeusOAuth2Token) SetClientId(v string) {
 
 // GetTokenType returns the TokenType field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetTokenType() string {
-	if o == nil || IsNil(o.TokenType) {
+	if o == nil || utils.IsNil(o.TokenType) {
 		var ret string
 		return ret
 	}
@@ -196,7 +197,7 @@ func (o *AmadeusOAuth2Token) GetTokenType() string {
 // GetTokenTypeOk returns a tuple with the TokenType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetTokenTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.TokenType) {
+	if o == nil || utils.IsNil(o.TokenType) {
 		return nil, false
 	}
 	return o.TokenType, true
@@ -204,7 +205,7 @@ func (o *AmadeusOAuth2Token) GetTokenTypeOk() (*string, bool) {
 
 // HasTokenType returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasTokenType() bool {
-	if o != nil && !IsNil(o.TokenType) {
+	if o != nil && !utils.IsNil(o.TokenType) {
 		return true
 	}
 
@@ -218,7 +219,7 @@ func (o *AmadeusOAuth2Token) SetTokenType(v string) {
 
 // GetAccessToken returns the AccessToken field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetAccessToken() string {
-	if o == nil || IsNil(o.AccessToken) {
+	if o == nil || utils.IsNil(o.AccessToken) {
 		var ret string
 		return ret
 	}
@@ -228,7 +229,7 @@ func (o *AmadeusOAuth2Token) GetAccessToken() string {
 // GetAccessTokenOk returns a tuple with the AccessToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetAccessTokenOk() (*string, bool) {
-	if o == nil || IsNil(o.AccessToken) {
+	if o == nil || utils.IsNil(o.AccessToken) {
 		return nil, false
 	}
 	return o.AccessToken, true
@@ -236,7 +237,7 @@ func (o *AmadeusOAuth2Token) GetAccessTokenOk() (*string, bool) {
 
 // HasAccessToken returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasAccessToken() bool {
-	if o != nil && !IsNil(o.AccessToken) {
+	if o != nil && !utils.IsNil(o.AccessToken) {
 		return true
 	}
 
@@ -250,7 +251,7 @@ func (o *AmadeusOAuth2Token) SetAccessToken(v string) {
 
 // GetExpiresIn returns the ExpiresIn field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetExpiresIn() int64 {
-	if o == nil || IsNil(o.ExpiresIn) {
+	if o == nil || utils.IsNil(o.ExpiresIn) {
 		var ret int64
 		return ret
 	}
@@ -260,7 +261,7 @@ func (o *AmadeusOAuth2Token) GetExpiresIn() int64 {
 // GetExpiresInOk returns a tuple with the ExpiresIn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetExpiresInOk() (*int64, bool) {
-	if o == nil || IsNil(o.ExpiresIn) {
+	if o == nil || utils.IsNil(o.ExpiresIn) {
 		return nil, false
 	}
 	return o.ExpiresIn, true
@@ -268,7 +269,7 @@ func (o *AmadeusOAuth2Token) GetExpiresInOk() (*int64, bool) {
 
 // HasExpiresIn returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasExpiresIn() bool {
-	if o != nil && !IsNil(o.ExpiresIn) {
+	if o != nil && !utils.IsNil(o.ExpiresIn) {
 		return true
 	}
 
@@ -282,7 +283,7 @@ func (o *AmadeusOAuth2Token) SetExpiresIn(v int64) {
 
 // GetState returns the State field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetState() string {
-	if o == nil || IsNil(o.State) {
+	if o == nil || utils.IsNil(o.State) {
 		var ret string
 		return ret
 	}
@@ -292,7 +293,7 @@ func (o *AmadeusOAuth2Token) GetState() string {
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetStateOk() (*string, bool) {
-	if o == nil || IsNil(o.State) {
+	if o == nil || utils.IsNil(o.State) {
 		return nil, false
 	}
 	return o.State, true
@@ -300,7 +301,7 @@ func (o *AmadeusOAuth2Token) GetStateOk() (*string, bool) {
 
 // HasState returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasState() bool {
-	if o != nil && !IsNil(o.State) {
+	if o != nil && !utils.IsNil(o.State) {
 		return true
 	}
 
@@ -314,7 +315,7 @@ func (o *AmadeusOAuth2Token) SetState(v string) {
 
 // GetScope returns the Scope field value if set, zero value otherwise.
 func (o *AmadeusOAuth2Token) GetScope() string {
-	if o == nil || IsNil(o.Scope) {
+	if o == nil || utils.IsNil(o.Scope) {
 		var ret string
 		return ret
 	}
@@ -324,7 +325,7 @@ func (o *AmadeusOAuth2Token) GetScope() string {
 // GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmadeusOAuth2Token) GetScopeOk() (*string, bool) {
-	if o == nil || IsNil(o.Scope) {
+	if o == nil || utils.IsNil(o.Scope) {
 		return nil, false
 	}
 	return o.Scope, true
@@ -332,7 +333,7 @@ func (o *AmadeusOAuth2Token) GetScopeOk() (*string, bool) {
 
 // HasScope returns a boolean if a field has been set.
 func (o *AmadeusOAuth2Token) HasScope() bool {
-	if o != nil && !IsNil(o.Scope) {
+	if o != nil && !utils.IsNil(o.Scope) {
 		return true
 	}
 
@@ -354,31 +355,31 @@ func (o AmadeusOAuth2Token) MarshalJSON() ([]byte, error) {
 
 func (o AmadeusOAuth2Token) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Type) {
+	if !utils.IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Username) {
+	if !utils.IsNil(o.Username) {
 		toSerialize["username"] = o.Username
 	}
-	if !IsNil(o.ApplicationName) {
+	if !utils.IsNil(o.ApplicationName) {
 		toSerialize["application_name"] = o.ApplicationName
 	}
-	if !IsNil(o.ClientId) {
+	if !utils.IsNil(o.ClientId) {
 		toSerialize["client_id"] = o.ClientId
 	}
-	if !IsNil(o.TokenType) {
+	if !utils.IsNil(o.TokenType) {
 		toSerialize["token_type"] = o.TokenType
 	}
-	if !IsNil(o.AccessToken) {
+	if !utils.IsNil(o.AccessToken) {
 		toSerialize["access_token"] = o.AccessToken
 	}
-	if !IsNil(o.ExpiresIn) {
+	if !utils.IsNil(o.ExpiresIn) {
 		toSerialize["expires_in"] = o.ExpiresIn
 	}
-	if !IsNil(o.State) {
+	if !utils.IsNil(o.State) {
 		toSerialize["state"] = o.State
 	}
-	if !IsNil(o.Scope) {
+	if !utils.IsNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
 	}
 	return toSerialize, nil

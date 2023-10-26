@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the EmergencyContact type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &EmergencyContact{}
+var _ utils.MappedNullable = &EmergencyContact{}
 
 // EmergencyContact emergency contact number
 type EmergencyContact struct {
@@ -49,7 +49,7 @@ func NewEmergencyContactWithDefaults() *EmergencyContact {
 
 // GetAddresseeName returns the AddresseeName field value if set, zero value otherwise.
 func (o *EmergencyContact) GetAddresseeName() string {
-	if o == nil || amadeus.IsNil(o.AddresseeName) {
+	if o == nil || utils.IsNil(o.AddresseeName) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *EmergencyContact) GetAddresseeName() string {
 // GetAddresseeNameOk returns a tuple with the AddresseeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmergencyContact) GetAddresseeNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.AddresseeName) {
+	if o == nil || utils.IsNil(o.AddresseeName) {
 		return nil, false
 	}
 	return o.AddresseeName, true
@@ -67,7 +67,7 @@ func (o *EmergencyContact) GetAddresseeNameOk() (*string, bool) {
 
 // HasAddresseeName returns a boolean if a field has been set.
 func (o *EmergencyContact) HasAddresseeName() bool {
-	if o != nil && !amadeus.IsNil(o.AddresseeName) {
+	if o != nil && !utils.IsNil(o.AddresseeName) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *EmergencyContact) SetAddresseeName(v string) {
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise.
 func (o *EmergencyContact) GetCountryCode() string {
-	if o == nil || amadeus.IsNil(o.CountryCode) {
+	if o == nil || utils.IsNil(o.CountryCode) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *EmergencyContact) GetCountryCode() string {
 // GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmergencyContact) GetCountryCodeOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.CountryCode) {
+	if o == nil || utils.IsNil(o.CountryCode) {
 		return nil, false
 	}
 	return o.CountryCode, true
@@ -99,7 +99,7 @@ func (o *EmergencyContact) GetCountryCodeOk() (*string, bool) {
 
 // HasCountryCode returns a boolean if a field has been set.
 func (o *EmergencyContact) HasCountryCode() bool {
-	if o != nil && !amadeus.IsNil(o.CountryCode) {
+	if o != nil && !utils.IsNil(o.CountryCode) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *EmergencyContact) SetCountryCode(v string) {
 
 // GetNumber returns the Number field value if set, zero value otherwise.
 func (o *EmergencyContact) GetNumber() string {
-	if o == nil || amadeus.IsNil(o.Number) {
+	if o == nil || utils.IsNil(o.Number) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *EmergencyContact) GetNumber() string {
 // GetNumberOk returns a tuple with the Number field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmergencyContact) GetNumberOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Number) {
+	if o == nil || utils.IsNil(o.Number) {
 		return nil, false
 	}
 	return o.Number, true
@@ -131,7 +131,7 @@ func (o *EmergencyContact) GetNumberOk() (*string, bool) {
 
 // HasNumber returns a boolean if a field has been set.
 func (o *EmergencyContact) HasNumber() bool {
-	if o != nil && !amadeus.IsNil(o.Number) {
+	if o != nil && !utils.IsNil(o.Number) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *EmergencyContact) SetNumber(v string) {
 
 // GetText returns the Text field value if set, zero value otherwise.
 func (o *EmergencyContact) GetText() string {
-	if o == nil || amadeus.IsNil(o.Text) {
+	if o == nil || utils.IsNil(o.Text) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *EmergencyContact) GetText() string {
 // GetTextOk returns a tuple with the Text field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmergencyContact) GetTextOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Text) {
+	if o == nil || utils.IsNil(o.Text) {
 		return nil, false
 	}
 	return o.Text, true
@@ -163,7 +163,7 @@ func (o *EmergencyContact) GetTextOk() (*string, bool) {
 
 // HasText returns a boolean if a field has been set.
 func (o *EmergencyContact) HasText() bool {
-	if o != nil && !amadeus.IsNil(o.Text) {
+	if o != nil && !utils.IsNil(o.Text) {
 		return true
 	}
 
@@ -185,16 +185,16 @@ func (o EmergencyContact) MarshalJSON() ([]byte, error) {
 
 func (o EmergencyContact) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.AddresseeName) {
+	if !utils.IsNil(o.AddresseeName) {
 		toSerialize["addresseeName"] = o.AddresseeName
 	}
-	if !amadeus.IsNil(o.CountryCode) {
+	if !utils.IsNil(o.CountryCode) {
 		toSerialize["countryCode"] = o.CountryCode
 	}
-	if !amadeus.IsNil(o.Number) {
+	if !utils.IsNil(o.Number) {
 		toSerialize["number"] = o.Number
 	}
-	if !amadeus.IsNil(o.Text) {
+	if !utils.IsNil(o.Text) {
 		toSerialize["text"] = o.Text
 	}
 	return toSerialize, nil

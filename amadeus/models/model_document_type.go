@@ -20,11 +20,11 @@ type DocumentType string
 
 // List of DocumentType
 const (
-	VISA           DocumentType = "VISA"
-	PASSPORT       DocumentType = "PASSPORT"
-	IDENTITY_CARD  DocumentType = "IDENTITY_CARD"
-	KNOWN_TRAVELER DocumentType = "KNOWN_TRAVELER"
-	REDRESS        DocumentType = "REDRESS"
+	VISA_DOCUMENT_TYPE DocumentType = "VISA"
+	PASSPORT           DocumentType = "PASSPORT"
+	IDENTITY_CARD      DocumentType = "IDENTITY_CARD"
+	KNOWN_TRAVELER     DocumentType = "KNOWN_TRAVELER"
+	REDRESS            DocumentType = "REDRESS"
 )
 
 // All allowed values of DocumentType enum
@@ -114,4 +114,3 @@ func (v *NullableDocumentType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

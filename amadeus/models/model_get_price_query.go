@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the GetPriceQuery type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &GetPriceQuery{}
+var _ utils.MappedNullable = &GetPriceQuery{}
 
 // GetPriceQuery struct for GetPriceQuery
 type GetPriceQuery struct {

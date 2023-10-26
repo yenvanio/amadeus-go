@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the TermAndCondition type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &TermAndCondition{}
+var _ utils.MappedNullable = &TermAndCondition{}
 
 // TermAndCondition struct for TermAndCondition
 type TermAndCondition struct {
@@ -47,7 +47,7 @@ func NewTermAndConditionWithDefaults() *TermAndCondition {
 
 // GetCategory returns the Category field value if set, zero value otherwise.
 func (o *TermAndCondition) GetCategory() string {
-	if o == nil || amadeus.IsNil(o.Category) {
+	if o == nil || utils.IsNil(o.Category) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *TermAndCondition) GetCategory() string {
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TermAndCondition) GetCategoryOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Category) {
+	if o == nil || utils.IsNil(o.Category) {
 		return nil, false
 	}
 	return o.Category, true
@@ -65,7 +65,7 @@ func (o *TermAndCondition) GetCategoryOk() (*string, bool) {
 
 // HasCategory returns a boolean if a field has been set.
 func (o *TermAndCondition) HasCategory() bool {
-	if o != nil && !amadeus.IsNil(o.Category) {
+	if o != nil && !utils.IsNil(o.Category) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *TermAndCondition) SetCategory(v string) {
 
 // GetCircumstances returns the Circumstances field value if set, zero value otherwise.
 func (o *TermAndCondition) GetCircumstances() string {
-	if o == nil || amadeus.IsNil(o.Circumstances) {
+	if o == nil || utils.IsNil(o.Circumstances) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *TermAndCondition) GetCircumstances() string {
 // GetCircumstancesOk returns a tuple with the Circumstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TermAndCondition) GetCircumstancesOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Circumstances) {
+	if o == nil || utils.IsNil(o.Circumstances) {
 		return nil, false
 	}
 	return o.Circumstances, true
@@ -97,7 +97,7 @@ func (o *TermAndCondition) GetCircumstancesOk() (*string, bool) {
 
 // HasCircumstances returns a boolean if a field has been set.
 func (o *TermAndCondition) HasCircumstances() bool {
-	if o != nil && !amadeus.IsNil(o.Circumstances) {
+	if o != nil && !utils.IsNil(o.Circumstances) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *TermAndCondition) SetCircumstances(v string) {
 
 // GetNotApplicable returns the NotApplicable field value if set, zero value otherwise.
 func (o *TermAndCondition) GetNotApplicable() bool {
-	if o == nil || amadeus.IsNil(o.NotApplicable) {
+	if o == nil || utils.IsNil(o.NotApplicable) {
 		var ret bool
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *TermAndCondition) GetNotApplicable() bool {
 // GetNotApplicableOk returns a tuple with the NotApplicable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TermAndCondition) GetNotApplicableOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.NotApplicable) {
+	if o == nil || utils.IsNil(o.NotApplicable) {
 		return nil, false
 	}
 	return o.NotApplicable, true
@@ -129,7 +129,7 @@ func (o *TermAndCondition) GetNotApplicableOk() (*bool, bool) {
 
 // HasNotApplicable returns a boolean if a field has been set.
 func (o *TermAndCondition) HasNotApplicable() bool {
-	if o != nil && !amadeus.IsNil(o.NotApplicable) {
+	if o != nil && !utils.IsNil(o.NotApplicable) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *TermAndCondition) SetNotApplicable(v bool) {
 
 // GetMaxPenaltyAmount returns the MaxPenaltyAmount field value if set, zero value otherwise.
 func (o *TermAndCondition) GetMaxPenaltyAmount() string {
-	if o == nil || amadeus.IsNil(o.MaxPenaltyAmount) {
+	if o == nil || utils.IsNil(o.MaxPenaltyAmount) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *TermAndCondition) GetMaxPenaltyAmount() string {
 // GetMaxPenaltyAmountOk returns a tuple with the MaxPenaltyAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TermAndCondition) GetMaxPenaltyAmountOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.MaxPenaltyAmount) {
+	if o == nil || utils.IsNil(o.MaxPenaltyAmount) {
 		return nil, false
 	}
 	return o.MaxPenaltyAmount, true
@@ -161,7 +161,7 @@ func (o *TermAndCondition) GetMaxPenaltyAmountOk() (*string, bool) {
 
 // HasMaxPenaltyAmount returns a boolean if a field has been set.
 func (o *TermAndCondition) HasMaxPenaltyAmount() bool {
-	if o != nil && !amadeus.IsNil(o.MaxPenaltyAmount) {
+	if o != nil && !utils.IsNil(o.MaxPenaltyAmount) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *TermAndCondition) SetMaxPenaltyAmount(v string) {
 
 // GetDescriptions returns the Descriptions field value if set, zero value otherwise.
 func (o *TermAndCondition) GetDescriptions() []Description {
-	if o == nil || amadeus.IsNil(o.Descriptions) {
+	if o == nil || utils.IsNil(o.Descriptions) {
 		var ret []Description
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *TermAndCondition) GetDescriptions() []Description {
 // GetDescriptionsOk returns a tuple with the Descriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TermAndCondition) GetDescriptionsOk() ([]Description, bool) {
-	if o == nil || amadeus.IsNil(o.Descriptions) {
+	if o == nil || utils.IsNil(o.Descriptions) {
 		return nil, false
 	}
 	return o.Descriptions, true
@@ -193,7 +193,7 @@ func (o *TermAndCondition) GetDescriptionsOk() ([]Description, bool) {
 
 // HasDescriptions returns a boolean if a field has been set.
 func (o *TermAndCondition) HasDescriptions() bool {
-	if o != nil && !amadeus.IsNil(o.Descriptions) {
+	if o != nil && !utils.IsNil(o.Descriptions) {
 		return true
 	}
 
@@ -215,19 +215,19 @@ func (o TermAndCondition) MarshalJSON() ([]byte, error) {
 
 func (o TermAndCondition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Category) {
+	if !utils.IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !amadeus.IsNil(o.Circumstances) {
+	if !utils.IsNil(o.Circumstances) {
 		toSerialize["circumstances"] = o.Circumstances
 	}
-	if !amadeus.IsNil(o.NotApplicable) {
+	if !utils.IsNil(o.NotApplicable) {
 		toSerialize["notApplicable"] = o.NotApplicable
 	}
-	if !amadeus.IsNil(o.MaxPenaltyAmount) {
+	if !utils.IsNil(o.MaxPenaltyAmount) {
 		toSerialize["maxPenaltyAmount"] = o.MaxPenaltyAmount
 	}
-	if !amadeus.IsNil(o.Descriptions) {
+	if !utils.IsNil(o.Descriptions) {
 		toSerialize["descriptions"] = o.Descriptions
 	}
 	return toSerialize, nil

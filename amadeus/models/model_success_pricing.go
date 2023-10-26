@@ -12,19 +12,18 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the SuccessPricing type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &SuccessPricing{}
+var _ utils.MappedNullable = &SuccessPricing{}
 
 // SuccessPricing struct for SuccessPricing
 type SuccessPricing struct {
-	Warnings     []openapi.Issue       `json:"warnings,omitempty"`
+	Warnings     []Issue       `json:"warnings,omitempty"`
 	Data         FlightOfferPricingOut `json:"data"`
 	Included     *IncludedResourcesMap `json:"included,omitempty"`
-	Dictionaries *openapi.Dictionaries `json:"dictionaries,omitempty"`
+	Dictionaries *Dictionaries `json:"dictionaries,omitempty"`
 }
 
 // NewSuccessPricing instantiates a new SuccessPricing object
@@ -46,9 +45,9 @@ func NewSuccessPricingWithDefaults() *SuccessPricing {
 }
 
 // GetWarnings returns the Warnings field value if set, zero value otherwise.
-func (o *SuccessPricing) GetWarnings() []openapi.Issue {
-	if o == nil || amadeus.IsNil(o.Warnings) {
-		var ret []openapi.Issue
+func (o *SuccessPricing) GetWarnings() []Issue {
+	if o == nil || utils.IsNil(o.Warnings) {
+		var ret []Issue
 		return ret
 	}
 	return o.Warnings
@@ -56,8 +55,8 @@ func (o *SuccessPricing) GetWarnings() []openapi.Issue {
 
 // GetWarningsOk returns a tuple with the Warnings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SuccessPricing) GetWarningsOk() ([]openapi.Issue, bool) {
-	if o == nil || amadeus.IsNil(o.Warnings) {
+func (o *SuccessPricing) GetWarningsOk() ([]Issue, bool) {
+	if o == nil || utils.IsNil(o.Warnings) {
 		return nil, false
 	}
 	return o.Warnings, true
@@ -65,7 +64,7 @@ func (o *SuccessPricing) GetWarningsOk() ([]openapi.Issue, bool) {
 
 // HasWarnings returns a boolean if a field has been set.
 func (o *SuccessPricing) HasWarnings() bool {
-	if o != nil && !amadeus.IsNil(o.Warnings) {
+	if o != nil && !utils.IsNil(o.Warnings) {
 		return true
 	}
 
@@ -73,7 +72,7 @@ func (o *SuccessPricing) HasWarnings() bool {
 }
 
 // SetWarnings gets a reference to the given []Issue and assigns it to the Warnings field.
-func (o *SuccessPricing) SetWarnings(v []openapi.Issue) {
+func (o *SuccessPricing) SetWarnings(v []Issue) {
 	o.Warnings = v
 }
 
@@ -103,7 +102,7 @@ func (o *SuccessPricing) SetData(v FlightOfferPricingOut) {
 
 // GetIncluded returns the Included field value if set, zero value otherwise.
 func (o *SuccessPricing) GetIncluded() IncludedResourcesMap {
-	if o == nil || amadeus.IsNil(o.Included) {
+	if o == nil || utils.IsNil(o.Included) {
 		var ret IncludedResourcesMap
 		return ret
 	}
@@ -113,7 +112,7 @@ func (o *SuccessPricing) GetIncluded() IncludedResourcesMap {
 // GetIncludedOk returns a tuple with the Included field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SuccessPricing) GetIncludedOk() (*IncludedResourcesMap, bool) {
-	if o == nil || amadeus.IsNil(o.Included) {
+	if o == nil || utils.IsNil(o.Included) {
 		return nil, false
 	}
 	return o.Included, true
@@ -121,7 +120,7 @@ func (o *SuccessPricing) GetIncludedOk() (*IncludedResourcesMap, bool) {
 
 // HasIncluded returns a boolean if a field has been set.
 func (o *SuccessPricing) HasIncluded() bool {
-	if o != nil && !amadeus.IsNil(o.Included) {
+	if o != nil && !utils.IsNil(o.Included) {
 		return true
 	}
 
@@ -134,9 +133,9 @@ func (o *SuccessPricing) SetIncluded(v IncludedResourcesMap) {
 }
 
 // GetDictionaries returns the Dictionaries field value if set, zero value otherwise.
-func (o *SuccessPricing) GetDictionaries() openapi.Dictionaries {
-	if o == nil || amadeus.IsNil(o.Dictionaries) {
-		var ret openapi.Dictionaries
+func (o *SuccessPricing) GetDictionaries() Dictionaries {
+	if o == nil || utils.IsNil(o.Dictionaries) {
+		var ret Dictionaries
 		return ret
 	}
 	return *o.Dictionaries
@@ -144,8 +143,8 @@ func (o *SuccessPricing) GetDictionaries() openapi.Dictionaries {
 
 // GetDictionariesOk returns a tuple with the Dictionaries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SuccessPricing) GetDictionariesOk() (*openapi.Dictionaries, bool) {
-	if o == nil || amadeus.IsNil(o.Dictionaries) {
+func (o *SuccessPricing) GetDictionariesOk() (*Dictionaries, bool) {
+	if o == nil || utils.IsNil(o.Dictionaries) {
 		return nil, false
 	}
 	return o.Dictionaries, true
@@ -153,7 +152,7 @@ func (o *SuccessPricing) GetDictionariesOk() (*openapi.Dictionaries, bool) {
 
 // HasDictionaries returns a boolean if a field has been set.
 func (o *SuccessPricing) HasDictionaries() bool {
-	if o != nil && !amadeus.IsNil(o.Dictionaries) {
+	if o != nil && !utils.IsNil(o.Dictionaries) {
 		return true
 	}
 
@@ -161,7 +160,7 @@ func (o *SuccessPricing) HasDictionaries() bool {
 }
 
 // SetDictionaries gets a reference to the given Dictionaries and assigns it to the Dictionaries field.
-func (o *SuccessPricing) SetDictionaries(v openapi.Dictionaries) {
+func (o *SuccessPricing) SetDictionaries(v Dictionaries) {
 	o.Dictionaries = &v
 }
 
@@ -175,14 +174,14 @@ func (o SuccessPricing) MarshalJSON() ([]byte, error) {
 
 func (o SuccessPricing) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Warnings) {
+	if !utils.IsNil(o.Warnings) {
 		toSerialize["warnings"] = o.Warnings
 	}
 	toSerialize["data"] = o.Data
-	if !amadeus.IsNil(o.Included) {
+	if !utils.IsNil(o.Included) {
 		toSerialize["included"] = o.Included
 	}
-	if !amadeus.IsNil(o.Dictionaries) {
+	if !utils.IsNil(o.Dictionaries) {
 		toSerialize["dictionaries"] = o.Dictionaries
 	}
 	return toSerialize, nil

@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Bags type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Bags{}
+var _ utils.MappedNullable = &Bags{}
 
 // Bags checked bag
 type Bags struct {
@@ -56,7 +56,7 @@ func NewBagsWithDefaults() *Bags {
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
 func (o *Bags) GetQuantity() int32 {
-	if o == nil || amadeus.IsNil(o.Quantity) {
+	if o == nil || utils.IsNil(o.Quantity) {
 		var ret int32
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *Bags) GetQuantity() int32 {
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bags) GetQuantityOk() (*int32, bool) {
-	if o == nil || amadeus.IsNil(o.Quantity) {
+	if o == nil || utils.IsNil(o.Quantity) {
 		return nil, false
 	}
 	return o.Quantity, true
@@ -74,7 +74,7 @@ func (o *Bags) GetQuantityOk() (*int32, bool) {
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *Bags) HasQuantity() bool {
-	if o != nil && !amadeus.IsNil(o.Quantity) {
+	if o != nil && !utils.IsNil(o.Quantity) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *Bags) SetQuantity(v int32) {
 
 // GetWeight returns the Weight field value if set, zero value otherwise.
 func (o *Bags) GetWeight() int32 {
-	if o == nil || amadeus.IsNil(o.Weight) {
+	if o == nil || utils.IsNil(o.Weight) {
 		var ret int32
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *Bags) GetWeight() int32 {
 // GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bags) GetWeightOk() (*int32, bool) {
-	if o == nil || amadeus.IsNil(o.Weight) {
+	if o == nil || utils.IsNil(o.Weight) {
 		return nil, false
 	}
 	return o.Weight, true
@@ -106,7 +106,7 @@ func (o *Bags) GetWeightOk() (*int32, bool) {
 
 // HasWeight returns a boolean if a field has been set.
 func (o *Bags) HasWeight() bool {
-	if o != nil && !amadeus.IsNil(o.Weight) {
+	if o != nil && !utils.IsNil(o.Weight) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *Bags) SetWeight(v int32) {
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise.
 func (o *Bags) GetWeightUnit() string {
-	if o == nil || amadeus.IsNil(o.WeightUnit) {
+	if o == nil || utils.IsNil(o.WeightUnit) {
 		var ret string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *Bags) GetWeightUnit() string {
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bags) GetWeightUnitOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.WeightUnit) {
+	if o == nil || utils.IsNil(o.WeightUnit) {
 		return nil, false
 	}
 	return o.WeightUnit, true
@@ -138,7 +138,7 @@ func (o *Bags) GetWeightUnitOk() (*string, bool) {
 
 // HasWeightUnit returns a boolean if a field has been set.
 func (o *Bags) HasWeightUnit() bool {
-	if o != nil && !amadeus.IsNil(o.WeightUnit) {
+	if o != nil && !utils.IsNil(o.WeightUnit) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *Bags) SetWeightUnit(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Bags) GetName() string {
-	if o == nil || amadeus.IsNil(o.Name) {
+	if o == nil || utils.IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *Bags) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bags) GetNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Name) {
+	if o == nil || utils.IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -170,7 +170,7 @@ func (o *Bags) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *Bags) HasName() bool {
-	if o != nil && !amadeus.IsNil(o.Name) {
+	if o != nil && !utils.IsNil(o.Name) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *Bags) SetName(v string) {
 
 // GetPrice returns the Price field value if set, zero value otherwise.
 func (o *Bags) GetPrice() ElementaryPrice {
-	if o == nil || amadeus.IsNil(o.Price) {
+	if o == nil || utils.IsNil(o.Price) {
 		var ret ElementaryPrice
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *Bags) GetPrice() ElementaryPrice {
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bags) GetPriceOk() (*ElementaryPrice, bool) {
-	if o == nil || amadeus.IsNil(o.Price) {
+	if o == nil || utils.IsNil(o.Price) {
 		return nil, false
 	}
 	return o.Price, true
@@ -202,7 +202,7 @@ func (o *Bags) GetPriceOk() (*ElementaryPrice, bool) {
 
 // HasPrice returns a boolean if a field has been set.
 func (o *Bags) HasPrice() bool {
-	if o != nil && !amadeus.IsNil(o.Price) {
+	if o != nil && !utils.IsNil(o.Price) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *Bags) SetPrice(v ElementaryPrice) {
 
 // GetBookableByItinerary returns the BookableByItinerary field value if set, zero value otherwise.
 func (o *Bags) GetBookableByItinerary() bool {
-	if o == nil || amadeus.IsNil(o.BookableByItinerary) {
+	if o == nil || utils.IsNil(o.BookableByItinerary) {
 		var ret bool
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *Bags) GetBookableByItinerary() bool {
 // GetBookableByItineraryOk returns a tuple with the BookableByItinerary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bags) GetBookableByItineraryOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.BookableByItinerary) {
+	if o == nil || utils.IsNil(o.BookableByItinerary) {
 		return nil, false
 	}
 	return o.BookableByItinerary, true
@@ -234,7 +234,7 @@ func (o *Bags) GetBookableByItineraryOk() (*bool, bool) {
 
 // HasBookableByItinerary returns a boolean if a field has been set.
 func (o *Bags) HasBookableByItinerary() bool {
-	if o != nil && !amadeus.IsNil(o.BookableByItinerary) {
+	if o != nil && !utils.IsNil(o.BookableByItinerary) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *Bags) SetBookableByItinerary(v bool) {
 
 // GetSegmentIds returns the SegmentIds field value if set, zero value otherwise.
 func (o *Bags) GetSegmentIds() []string {
-	if o == nil || amadeus.IsNil(o.SegmentIds) {
+	if o == nil || utils.IsNil(o.SegmentIds) {
 		var ret []string
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *Bags) GetSegmentIds() []string {
 // GetSegmentIdsOk returns a tuple with the SegmentIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bags) GetSegmentIdsOk() ([]string, bool) {
-	if o == nil || amadeus.IsNil(o.SegmentIds) {
+	if o == nil || utils.IsNil(o.SegmentIds) {
 		return nil, false
 	}
 	return o.SegmentIds, true
@@ -266,7 +266,7 @@ func (o *Bags) GetSegmentIdsOk() ([]string, bool) {
 
 // HasSegmentIds returns a boolean if a field has been set.
 func (o *Bags) HasSegmentIds() bool {
-	if o != nil && !amadeus.IsNil(o.SegmentIds) {
+	if o != nil && !utils.IsNil(o.SegmentIds) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *Bags) SetSegmentIds(v []string) {
 
 // GetTravelerIds returns the TravelerIds field value if set, zero value otherwise.
 func (o *Bags) GetTravelerIds() []string {
-	if o == nil || amadeus.IsNil(o.TravelerIds) {
+	if o == nil || utils.IsNil(o.TravelerIds) {
 		var ret []string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *Bags) GetTravelerIds() []string {
 // GetTravelerIdsOk returns a tuple with the TravelerIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Bags) GetTravelerIdsOk() ([]string, bool) {
-	if o == nil || amadeus.IsNil(o.TravelerIds) {
+	if o == nil || utils.IsNil(o.TravelerIds) {
 		return nil, false
 	}
 	return o.TravelerIds, true
@@ -298,7 +298,7 @@ func (o *Bags) GetTravelerIdsOk() ([]string, bool) {
 
 // HasTravelerIds returns a boolean if a field has been set.
 func (o *Bags) HasTravelerIds() bool {
-	if o != nil && !amadeus.IsNil(o.TravelerIds) {
+	if o != nil && !utils.IsNil(o.TravelerIds) {
 		return true
 	}
 
@@ -320,28 +320,28 @@ func (o Bags) MarshalJSON() ([]byte, error) {
 
 func (o Bags) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Quantity) {
+	if !utils.IsNil(o.Quantity) {
 		toSerialize["quantity"] = o.Quantity
 	}
-	if !amadeus.IsNil(o.Weight) {
+	if !utils.IsNil(o.Weight) {
 		toSerialize["weight"] = o.Weight
 	}
-	if !amadeus.IsNil(o.WeightUnit) {
+	if !utils.IsNil(o.WeightUnit) {
 		toSerialize["weightUnit"] = o.WeightUnit
 	}
-	if !amadeus.IsNil(o.Name) {
+	if !utils.IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !amadeus.IsNil(o.Price) {
+	if !utils.IsNil(o.Price) {
 		toSerialize["price"] = o.Price
 	}
-	if !amadeus.IsNil(o.BookableByItinerary) {
+	if !utils.IsNil(o.BookableByItinerary) {
 		toSerialize["bookableByItinerary"] = o.BookableByItinerary
 	}
-	if !amadeus.IsNil(o.SegmentIds) {
+	if !utils.IsNil(o.SegmentIds) {
 		toSerialize["segmentIds"] = o.SegmentIds
 	}
-	if !amadeus.IsNil(o.TravelerIds) {
+	if !utils.IsNil(o.TravelerIds) {
 		toSerialize["travelerIds"] = o.TravelerIds
 	}
 	return toSerialize, nil

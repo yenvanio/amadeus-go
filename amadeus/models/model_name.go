@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Name type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Name{}
+var _ utils.MappedNullable = &Name{}
 
 // Name name
 type Name struct {
@@ -49,7 +49,7 @@ func NewNameWithDefaults() *Name {
 
 // GetFirstName returns the FirstName field value if set, zero value otherwise.
 func (o *Name) GetFirstName() string {
-	if o == nil || amadeus.IsNil(o.FirstName) {
+	if o == nil || utils.IsNil(o.FirstName) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *Name) GetFirstName() string {
 // GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Name) GetFirstNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.FirstName) {
+	if o == nil || utils.IsNil(o.FirstName) {
 		return nil, false
 	}
 	return o.FirstName, true
@@ -67,7 +67,7 @@ func (o *Name) GetFirstNameOk() (*string, bool) {
 
 // HasFirstName returns a boolean if a field has been set.
 func (o *Name) HasFirstName() bool {
-	if o != nil && !amadeus.IsNil(o.FirstName) {
+	if o != nil && !utils.IsNil(o.FirstName) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *Name) SetFirstName(v string) {
 
 // GetLastName returns the LastName field value if set, zero value otherwise.
 func (o *Name) GetLastName() string {
-	if o == nil || amadeus.IsNil(o.LastName) {
+	if o == nil || utils.IsNil(o.LastName) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *Name) GetLastName() string {
 // GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Name) GetLastNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.LastName) {
+	if o == nil || utils.IsNil(o.LastName) {
 		return nil, false
 	}
 	return o.LastName, true
@@ -99,7 +99,7 @@ func (o *Name) GetLastNameOk() (*string, bool) {
 
 // HasLastName returns a boolean if a field has been set.
 func (o *Name) HasLastName() bool {
-	if o != nil && !amadeus.IsNil(o.LastName) {
+	if o != nil && !utils.IsNil(o.LastName) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *Name) SetLastName(v string) {
 
 // GetMiddleName returns the MiddleName field value if set, zero value otherwise.
 func (o *Name) GetMiddleName() string {
-	if o == nil || amadeus.IsNil(o.MiddleName) {
+	if o == nil || utils.IsNil(o.MiddleName) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *Name) GetMiddleName() string {
 // GetMiddleNameOk returns a tuple with the MiddleName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Name) GetMiddleNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.MiddleName) {
+	if o == nil || utils.IsNil(o.MiddleName) {
 		return nil, false
 	}
 	return o.MiddleName, true
@@ -131,7 +131,7 @@ func (o *Name) GetMiddleNameOk() (*string, bool) {
 
 // HasMiddleName returns a boolean if a field has been set.
 func (o *Name) HasMiddleName() bool {
-	if o != nil && !amadeus.IsNil(o.MiddleName) {
+	if o != nil && !utils.IsNil(o.MiddleName) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *Name) SetMiddleName(v string) {
 
 // GetSecondLastName returns the SecondLastName field value if set, zero value otherwise.
 func (o *Name) GetSecondLastName() string {
-	if o == nil || amadeus.IsNil(o.SecondLastName) {
+	if o == nil || utils.IsNil(o.SecondLastName) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *Name) GetSecondLastName() string {
 // GetSecondLastNameOk returns a tuple with the SecondLastName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Name) GetSecondLastNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.SecondLastName) {
+	if o == nil || utils.IsNil(o.SecondLastName) {
 		return nil, false
 	}
 	return o.SecondLastName, true
@@ -163,7 +163,7 @@ func (o *Name) GetSecondLastNameOk() (*string, bool) {
 
 // HasSecondLastName returns a boolean if a field has been set.
 func (o *Name) HasSecondLastName() bool {
-	if o != nil && !amadeus.IsNil(o.SecondLastName) {
+	if o != nil && !utils.IsNil(o.SecondLastName) {
 		return true
 	}
 
@@ -185,16 +185,16 @@ func (o Name) MarshalJSON() ([]byte, error) {
 
 func (o Name) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.FirstName) {
+	if !utils.IsNil(o.FirstName) {
 		toSerialize["firstName"] = o.FirstName
 	}
-	if !amadeus.IsNil(o.LastName) {
+	if !utils.IsNil(o.LastName) {
 		toSerialize["lastName"] = o.LastName
 	}
-	if !amadeus.IsNil(o.MiddleName) {
+	if !utils.IsNil(o.MiddleName) {
 		toSerialize["middleName"] = o.MiddleName
 	}
-	if !amadeus.IsNil(o.SecondLastName) {
+	if !utils.IsNil(o.SecondLastName) {
 		toSerialize["secondLastName"] = o.SecondLastName
 	}
 	return toSerialize, nil

@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the IdentityDocument type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &IdentityDocument{}
+var _ utils.MappedNullable = &IdentityDocument{}
 
 // IdentityDocument documents of the traveler
 type IdentityDocument struct {
@@ -62,7 +62,7 @@ func NewIdentityDocumentWithDefaults() *IdentityDocument {
 
 // GetNumber returns the Number field value if set, zero value otherwise.
 func (o *IdentityDocument) GetNumber() string {
-	if o == nil || amadeus.IsNil(o.Number) {
+	if o == nil || utils.IsNil(o.Number) {
 		var ret string
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *IdentityDocument) GetNumber() string {
 // GetNumberOk returns a tuple with the Number field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetNumberOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Number) {
+	if o == nil || utils.IsNil(o.Number) {
 		return nil, false
 	}
 	return o.Number, true
@@ -80,7 +80,7 @@ func (o *IdentityDocument) GetNumberOk() (*string, bool) {
 
 // HasNumber returns a boolean if a field has been set.
 func (o *IdentityDocument) HasNumber() bool {
-	if o != nil && !amadeus.IsNil(o.Number) {
+	if o != nil && !utils.IsNil(o.Number) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *IdentityDocument) SetNumber(v string) {
 
 // GetIssuanceDate returns the IssuanceDate field value if set, zero value otherwise.
 func (o *IdentityDocument) GetIssuanceDate() string {
-	if o == nil || amadeus.IsNil(o.IssuanceDate) {
+	if o == nil || utils.IsNil(o.IssuanceDate) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *IdentityDocument) GetIssuanceDate() string {
 // GetIssuanceDateOk returns a tuple with the IssuanceDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetIssuanceDateOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.IssuanceDate) {
+	if o == nil || utils.IsNil(o.IssuanceDate) {
 		return nil, false
 	}
 	return o.IssuanceDate, true
@@ -112,7 +112,7 @@ func (o *IdentityDocument) GetIssuanceDateOk() (*string, bool) {
 
 // HasIssuanceDate returns a boolean if a field has been set.
 func (o *IdentityDocument) HasIssuanceDate() bool {
-	if o != nil && !amadeus.IsNil(o.IssuanceDate) {
+	if o != nil && !utils.IsNil(o.IssuanceDate) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *IdentityDocument) SetIssuanceDate(v string) {
 
 // GetExpiryDate returns the ExpiryDate field value if set, zero value otherwise.
 func (o *IdentityDocument) GetExpiryDate() string {
-	if o == nil || amadeus.IsNil(o.ExpiryDate) {
+	if o == nil || utils.IsNil(o.ExpiryDate) {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *IdentityDocument) GetExpiryDate() string {
 // GetExpiryDateOk returns a tuple with the ExpiryDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetExpiryDateOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.ExpiryDate) {
+	if o == nil || utils.IsNil(o.ExpiryDate) {
 		return nil, false
 	}
 	return o.ExpiryDate, true
@@ -144,7 +144,7 @@ func (o *IdentityDocument) GetExpiryDateOk() (*string, bool) {
 
 // HasExpiryDate returns a boolean if a field has been set.
 func (o *IdentityDocument) HasExpiryDate() bool {
-	if o != nil && !amadeus.IsNil(o.ExpiryDate) {
+	if o != nil && !utils.IsNil(o.ExpiryDate) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *IdentityDocument) SetExpiryDate(v string) {
 
 // GetIssuanceCountry returns the IssuanceCountry field value if set, zero value otherwise.
 func (o *IdentityDocument) GetIssuanceCountry() string {
-	if o == nil || amadeus.IsNil(o.IssuanceCountry) {
+	if o == nil || utils.IsNil(o.IssuanceCountry) {
 		var ret string
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *IdentityDocument) GetIssuanceCountry() string {
 // GetIssuanceCountryOk returns a tuple with the IssuanceCountry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetIssuanceCountryOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.IssuanceCountry) {
+	if o == nil || utils.IsNil(o.IssuanceCountry) {
 		return nil, false
 	}
 	return o.IssuanceCountry, true
@@ -176,7 +176,7 @@ func (o *IdentityDocument) GetIssuanceCountryOk() (*string, bool) {
 
 // HasIssuanceCountry returns a boolean if a field has been set.
 func (o *IdentityDocument) HasIssuanceCountry() bool {
-	if o != nil && !amadeus.IsNil(o.IssuanceCountry) {
+	if o != nil && !utils.IsNil(o.IssuanceCountry) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *IdentityDocument) SetIssuanceCountry(v string) {
 
 // GetIssuanceLocation returns the IssuanceLocation field value if set, zero value otherwise.
 func (o *IdentityDocument) GetIssuanceLocation() string {
-	if o == nil || amadeus.IsNil(o.IssuanceLocation) {
+	if o == nil || utils.IsNil(o.IssuanceLocation) {
 		var ret string
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *IdentityDocument) GetIssuanceLocation() string {
 // GetIssuanceLocationOk returns a tuple with the IssuanceLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetIssuanceLocationOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.IssuanceLocation) {
+	if o == nil || utils.IsNil(o.IssuanceLocation) {
 		return nil, false
 	}
 	return o.IssuanceLocation, true
@@ -208,7 +208,7 @@ func (o *IdentityDocument) GetIssuanceLocationOk() (*string, bool) {
 
 // HasIssuanceLocation returns a boolean if a field has been set.
 func (o *IdentityDocument) HasIssuanceLocation() bool {
-	if o != nil && !amadeus.IsNil(o.IssuanceLocation) {
+	if o != nil && !utils.IsNil(o.IssuanceLocation) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *IdentityDocument) SetIssuanceLocation(v string) {
 
 // GetNationality returns the Nationality field value if set, zero value otherwise.
 func (o *IdentityDocument) GetNationality() string {
-	if o == nil || amadeus.IsNil(o.Nationality) {
+	if o == nil || utils.IsNil(o.Nationality) {
 		var ret string
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *IdentityDocument) GetNationality() string {
 // GetNationalityOk returns a tuple with the Nationality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetNationalityOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Nationality) {
+	if o == nil || utils.IsNil(o.Nationality) {
 		return nil, false
 	}
 	return o.Nationality, true
@@ -240,7 +240,7 @@ func (o *IdentityDocument) GetNationalityOk() (*string, bool) {
 
 // HasNationality returns a boolean if a field has been set.
 func (o *IdentityDocument) HasNationality() bool {
-	if o != nil && !amadeus.IsNil(o.Nationality) {
+	if o != nil && !utils.IsNil(o.Nationality) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *IdentityDocument) SetNationality(v string) {
 
 // GetBirthPlace returns the BirthPlace field value if set, zero value otherwise.
 func (o *IdentityDocument) GetBirthPlace() string {
-	if o == nil || amadeus.IsNil(o.BirthPlace) {
+	if o == nil || utils.IsNil(o.BirthPlace) {
 		var ret string
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *IdentityDocument) GetBirthPlace() string {
 // GetBirthPlaceOk returns a tuple with the BirthPlace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetBirthPlaceOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.BirthPlace) {
+	if o == nil || utils.IsNil(o.BirthPlace) {
 		return nil, false
 	}
 	return o.BirthPlace, true
@@ -272,7 +272,7 @@ func (o *IdentityDocument) GetBirthPlaceOk() (*string, bool) {
 
 // HasBirthPlace returns a boolean if a field has been set.
 func (o *IdentityDocument) HasBirthPlace() bool {
-	if o != nil && !amadeus.IsNil(o.BirthPlace) {
+	if o != nil && !utils.IsNil(o.BirthPlace) {
 		return true
 	}
 
@@ -286,7 +286,7 @@ func (o *IdentityDocument) SetBirthPlace(v string) {
 
 // GetDocumentType returns the DocumentType field value if set, zero value otherwise.
 func (o *IdentityDocument) GetDocumentType() DocumentType {
-	if o == nil || amadeus.IsNil(o.DocumentType) {
+	if o == nil || utils.IsNil(o.DocumentType) {
 		var ret DocumentType
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *IdentityDocument) GetDocumentType() DocumentType {
 // GetDocumentTypeOk returns a tuple with the DocumentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetDocumentTypeOk() (*DocumentType, bool) {
-	if o == nil || amadeus.IsNil(o.DocumentType) {
+	if o == nil || utils.IsNil(o.DocumentType) {
 		return nil, false
 	}
 	return o.DocumentType, true
@@ -304,7 +304,7 @@ func (o *IdentityDocument) GetDocumentTypeOk() (*DocumentType, bool) {
 
 // HasDocumentType returns a boolean if a field has been set.
 func (o *IdentityDocument) HasDocumentType() bool {
-	if o != nil && !amadeus.IsNil(o.DocumentType) {
+	if o != nil && !utils.IsNil(o.DocumentType) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o *IdentityDocument) SetDocumentType(v DocumentType) {
 
 // GetValidityCountry returns the ValidityCountry field value if set, zero value otherwise.
 func (o *IdentityDocument) GetValidityCountry() string {
-	if o == nil || amadeus.IsNil(o.ValidityCountry) {
+	if o == nil || utils.IsNil(o.ValidityCountry) {
 		var ret string
 		return ret
 	}
@@ -328,7 +328,7 @@ func (o *IdentityDocument) GetValidityCountry() string {
 // GetValidityCountryOk returns a tuple with the ValidityCountry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetValidityCountryOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.ValidityCountry) {
+	if o == nil || utils.IsNil(o.ValidityCountry) {
 		return nil, false
 	}
 	return o.ValidityCountry, true
@@ -336,7 +336,7 @@ func (o *IdentityDocument) GetValidityCountryOk() (*string, bool) {
 
 // HasValidityCountry returns a boolean if a field has been set.
 func (o *IdentityDocument) HasValidityCountry() bool {
-	if o != nil && !amadeus.IsNil(o.ValidityCountry) {
+	if o != nil && !utils.IsNil(o.ValidityCountry) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *IdentityDocument) SetValidityCountry(v string) {
 
 // GetBirthCountry returns the BirthCountry field value if set, zero value otherwise.
 func (o *IdentityDocument) GetBirthCountry() string {
-	if o == nil || amadeus.IsNil(o.BirthCountry) {
+	if o == nil || utils.IsNil(o.BirthCountry) {
 		var ret string
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *IdentityDocument) GetBirthCountry() string {
 // GetBirthCountryOk returns a tuple with the BirthCountry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetBirthCountryOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.BirthCountry) {
+	if o == nil || utils.IsNil(o.BirthCountry) {
 		return nil, false
 	}
 	return o.BirthCountry, true
@@ -368,7 +368,7 @@ func (o *IdentityDocument) GetBirthCountryOk() (*string, bool) {
 
 // HasBirthCountry returns a boolean if a field has been set.
 func (o *IdentityDocument) HasBirthCountry() bool {
-	if o != nil && !amadeus.IsNil(o.BirthCountry) {
+	if o != nil && !utils.IsNil(o.BirthCountry) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *IdentityDocument) SetBirthCountry(v string) {
 
 // GetHolder returns the Holder field value if set, zero value otherwise.
 func (o *IdentityDocument) GetHolder() bool {
-	if o == nil || amadeus.IsNil(o.Holder) {
+	if o == nil || utils.IsNil(o.Holder) {
 		var ret bool
 		return ret
 	}
@@ -392,7 +392,7 @@ func (o *IdentityDocument) GetHolder() bool {
 // GetHolderOk returns a tuple with the Holder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityDocument) GetHolderOk() (*bool, bool) {
-	if o == nil || amadeus.IsNil(o.Holder) {
+	if o == nil || utils.IsNil(o.Holder) {
 		return nil, false
 	}
 	return o.Holder, true
@@ -400,7 +400,7 @@ func (o *IdentityDocument) GetHolderOk() (*bool, bool) {
 
 // HasHolder returns a boolean if a field has been set.
 func (o *IdentityDocument) HasHolder() bool {
-	if o != nil && !amadeus.IsNil(o.Holder) {
+	if o != nil && !utils.IsNil(o.Holder) {
 		return true
 	}
 
@@ -422,37 +422,37 @@ func (o IdentityDocument) MarshalJSON() ([]byte, error) {
 
 func (o IdentityDocument) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Number) {
+	if !utils.IsNil(o.Number) {
 		toSerialize["number"] = o.Number
 	}
-	if !amadeus.IsNil(o.IssuanceDate) {
+	if !utils.IsNil(o.IssuanceDate) {
 		toSerialize["issuanceDate"] = o.IssuanceDate
 	}
-	if !amadeus.IsNil(o.ExpiryDate) {
+	if !utils.IsNil(o.ExpiryDate) {
 		toSerialize["expiryDate"] = o.ExpiryDate
 	}
-	if !amadeus.IsNil(o.IssuanceCountry) {
+	if !utils.IsNil(o.IssuanceCountry) {
 		toSerialize["issuanceCountry"] = o.IssuanceCountry
 	}
-	if !amadeus.IsNil(o.IssuanceLocation) {
+	if !utils.IsNil(o.IssuanceLocation) {
 		toSerialize["issuanceLocation"] = o.IssuanceLocation
 	}
-	if !amadeus.IsNil(o.Nationality) {
+	if !utils.IsNil(o.Nationality) {
 		toSerialize["nationality"] = o.Nationality
 	}
-	if !amadeus.IsNil(o.BirthPlace) {
+	if !utils.IsNil(o.BirthPlace) {
 		toSerialize["birthPlace"] = o.BirthPlace
 	}
-	if !amadeus.IsNil(o.DocumentType) {
+	if !utils.IsNil(o.DocumentType) {
 		toSerialize["documentType"] = o.DocumentType
 	}
-	if !amadeus.IsNil(o.ValidityCountry) {
+	if !utils.IsNil(o.ValidityCountry) {
 		toSerialize["validityCountry"] = o.ValidityCountry
 	}
-	if !amadeus.IsNil(o.BirthCountry) {
+	if !utils.IsNil(o.BirthCountry) {
 		toSerialize["birthCountry"] = o.BirthCountry
 	}
-	if !amadeus.IsNil(o.Holder) {
+	if !utils.IsNil(o.Holder) {
 		toSerialize["holder"] = o.Holder
 	}
 	return toSerialize, nil

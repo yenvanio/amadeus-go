@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the LoyaltyProgram type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &LoyaltyProgram{}
+var _ utils.MappedNullable = &LoyaltyProgram{}
 
 // LoyaltyProgram loyalty program information
 type LoyaltyProgram struct {
@@ -45,7 +45,7 @@ func NewLoyaltyProgramWithDefaults() *LoyaltyProgram {
 
 // GetProgramOwner returns the ProgramOwner field value if set, zero value otherwise.
 func (o *LoyaltyProgram) GetProgramOwner() string {
-	if o == nil || amadeus.IsNil(o.ProgramOwner) {
+	if o == nil || utils.IsNil(o.ProgramOwner) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *LoyaltyProgram) GetProgramOwner() string {
 // GetProgramOwnerOk returns a tuple with the ProgramOwner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LoyaltyProgram) GetProgramOwnerOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.ProgramOwner) {
+	if o == nil || utils.IsNil(o.ProgramOwner) {
 		return nil, false
 	}
 	return o.ProgramOwner, true
@@ -63,7 +63,7 @@ func (o *LoyaltyProgram) GetProgramOwnerOk() (*string, bool) {
 
 // HasProgramOwner returns a boolean if a field has been set.
 func (o *LoyaltyProgram) HasProgramOwner() bool {
-	if o != nil && !amadeus.IsNil(o.ProgramOwner) {
+	if o != nil && !utils.IsNil(o.ProgramOwner) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *LoyaltyProgram) SetProgramOwner(v string) {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *LoyaltyProgram) GetId() string {
-	if o == nil || amadeus.IsNil(o.Id) {
+	if o == nil || utils.IsNil(o.Id) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *LoyaltyProgram) GetId() string {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LoyaltyProgram) GetIdOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Id) {
+	if o == nil || utils.IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -95,7 +95,7 @@ func (o *LoyaltyProgram) GetIdOk() (*string, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *LoyaltyProgram) HasId() bool {
-	if o != nil && !amadeus.IsNil(o.Id) {
+	if o != nil && !utils.IsNil(o.Id) {
 		return true
 	}
 
@@ -117,10 +117,10 @@ func (o LoyaltyProgram) MarshalJSON() ([]byte, error) {
 
 func (o LoyaltyProgram) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.ProgramOwner) {
+	if !utils.IsNil(o.ProgramOwner) {
 		toSerialize["programOwner"] = o.ProgramOwner
 	}
-	if !amadeus.IsNil(o.Id) {
+	if !utils.IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	return toSerialize, nil

@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Phone type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Phone{}
+var _ utils.MappedNullable = &Phone{}
 
 // Phone phone information
 type Phone struct {
@@ -46,7 +46,7 @@ func NewPhoneWithDefaults() *Phone {
 
 // GetDeviceType returns the DeviceType field value if set, zero value otherwise.
 func (o *Phone) GetDeviceType() PhoneDeviceType {
-	if o == nil || amadeus.IsNil(o.DeviceType) {
+	if o == nil || utils.IsNil(o.DeviceType) {
 		var ret PhoneDeviceType
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *Phone) GetDeviceType() PhoneDeviceType {
 // GetDeviceTypeOk returns a tuple with the DeviceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Phone) GetDeviceTypeOk() (*PhoneDeviceType, bool) {
-	if o == nil || amadeus.IsNil(o.DeviceType) {
+	if o == nil || utils.IsNil(o.DeviceType) {
 		return nil, false
 	}
 	return o.DeviceType, true
@@ -64,7 +64,7 @@ func (o *Phone) GetDeviceTypeOk() (*PhoneDeviceType, bool) {
 
 // HasDeviceType returns a boolean if a field has been set.
 func (o *Phone) HasDeviceType() bool {
-	if o != nil && !amadeus.IsNil(o.DeviceType) {
+	if o != nil && !utils.IsNil(o.DeviceType) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *Phone) SetDeviceType(v PhoneDeviceType) {
 
 // GetCountryCallingCode returns the CountryCallingCode field value if set, zero value otherwise.
 func (o *Phone) GetCountryCallingCode() string {
-	if o == nil || amadeus.IsNil(o.CountryCallingCode) {
+	if o == nil || utils.IsNil(o.CountryCallingCode) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *Phone) GetCountryCallingCode() string {
 // GetCountryCallingCodeOk returns a tuple with the CountryCallingCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Phone) GetCountryCallingCodeOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.CountryCallingCode) {
+	if o == nil || utils.IsNil(o.CountryCallingCode) {
 		return nil, false
 	}
 	return o.CountryCallingCode, true
@@ -96,7 +96,7 @@ func (o *Phone) GetCountryCallingCodeOk() (*string, bool) {
 
 // HasCountryCallingCode returns a boolean if a field has been set.
 func (o *Phone) HasCountryCallingCode() bool {
-	if o != nil && !amadeus.IsNil(o.CountryCallingCode) {
+	if o != nil && !utils.IsNil(o.CountryCallingCode) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *Phone) SetCountryCallingCode(v string) {
 
 // GetNumber returns the Number field value if set, zero value otherwise.
 func (o *Phone) GetNumber() string {
-	if o == nil || amadeus.IsNil(o.Number) {
+	if o == nil || utils.IsNil(o.Number) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *Phone) GetNumber() string {
 // GetNumberOk returns a tuple with the Number field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Phone) GetNumberOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Number) {
+	if o == nil || utils.IsNil(o.Number) {
 		return nil, false
 	}
 	return o.Number, true
@@ -128,7 +128,7 @@ func (o *Phone) GetNumberOk() (*string, bool) {
 
 // HasNumber returns a boolean if a field has been set.
 func (o *Phone) HasNumber() bool {
-	if o != nil && !amadeus.IsNil(o.Number) {
+	if o != nil && !utils.IsNil(o.Number) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o Phone) MarshalJSON() ([]byte, error) {
 
 func (o Phone) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.DeviceType) {
+	if !utils.IsNil(o.DeviceType) {
 		toSerialize["deviceType"] = o.DeviceType
 	}
-	if !amadeus.IsNil(o.CountryCallingCode) {
+	if !utils.IsNil(o.CountryCallingCode) {
 		toSerialize["countryCallingCode"] = o.CountryCallingCode
 	}
-	if !amadeus.IsNil(o.Number) {
+	if !utils.IsNil(o.Number) {
 		toSerialize["number"] = o.Number
 	}
 	return toSerialize, nil

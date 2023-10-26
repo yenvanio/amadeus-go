@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the IncludedResourcesMap type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &IncludedResourcesMap{}
+var _ utils.MappedNullable = &IncludedResourcesMap{}
 
 // IncludedResourcesMap struct for IncludedResourcesMap
 type IncludedResourcesMap struct {
@@ -49,7 +49,7 @@ func NewIncludedResourcesMapWithDefaults() *IncludedResourcesMap {
 
 // GetCreditCardFees returns the CreditCardFees field value if set, zero value otherwise.
 func (o *IncludedResourcesMap) GetCreditCardFees() map[string]interface{} {
-	if o == nil || amadeus.IsNil(o.CreditCardFees) {
+	if o == nil || utils.IsNil(o.CreditCardFees) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *IncludedResourcesMap) GetCreditCardFees() map[string]interface{} {
 // GetCreditCardFeesOk returns a tuple with the CreditCardFees field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IncludedResourcesMap) GetCreditCardFeesOk() (map[string]interface{}, bool) {
-	if o == nil || amadeus.IsNil(o.CreditCardFees) {
+	if o == nil || utils.IsNil(o.CreditCardFees) {
 		return map[string]interface{}{}, false
 	}
 	return o.CreditCardFees, true
@@ -67,7 +67,7 @@ func (o *IncludedResourcesMap) GetCreditCardFeesOk() (map[string]interface{}, bo
 
 // HasCreditCardFees returns a boolean if a field has been set.
 func (o *IncludedResourcesMap) HasCreditCardFees() bool {
-	if o != nil && !amadeus.IsNil(o.CreditCardFees) {
+	if o != nil && !utils.IsNil(o.CreditCardFees) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *IncludedResourcesMap) SetCreditCardFees(v map[string]interface{}) {
 
 // GetBags returns the Bags field value if set, zero value otherwise.
 func (o *IncludedResourcesMap) GetBags() map[string]interface{} {
-	if o == nil || amadeus.IsNil(o.Bags) {
+	if o == nil || utils.IsNil(o.Bags) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *IncludedResourcesMap) GetBags() map[string]interface{} {
 // GetBagsOk returns a tuple with the Bags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IncludedResourcesMap) GetBagsOk() (map[string]interface{}, bool) {
-	if o == nil || amadeus.IsNil(o.Bags) {
+	if o == nil || utils.IsNil(o.Bags) {
 		return map[string]interface{}{}, false
 	}
 	return o.Bags, true
@@ -99,7 +99,7 @@ func (o *IncludedResourcesMap) GetBagsOk() (map[string]interface{}, bool) {
 
 // HasBags returns a boolean if a field has been set.
 func (o *IncludedResourcesMap) HasBags() bool {
-	if o != nil && !amadeus.IsNil(o.Bags) {
+	if o != nil && !utils.IsNil(o.Bags) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *IncludedResourcesMap) SetBags(v map[string]interface{}) {
 
 // GetOtherServices returns the OtherServices field value if set, zero value otherwise.
 func (o *IncludedResourcesMap) GetOtherServices() map[string]interface{} {
-	if o == nil || amadeus.IsNil(o.OtherServices) {
+	if o == nil || utils.IsNil(o.OtherServices) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *IncludedResourcesMap) GetOtherServices() map[string]interface{} {
 // GetOtherServicesOk returns a tuple with the OtherServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IncludedResourcesMap) GetOtherServicesOk() (map[string]interface{}, bool) {
-	if o == nil || amadeus.IsNil(o.OtherServices) {
+	if o == nil || utils.IsNil(o.OtherServices) {
 		return map[string]interface{}{}, false
 	}
 	return o.OtherServices, true
@@ -131,7 +131,7 @@ func (o *IncludedResourcesMap) GetOtherServicesOk() (map[string]interface{}, boo
 
 // HasOtherServices returns a boolean if a field has been set.
 func (o *IncludedResourcesMap) HasOtherServices() bool {
-	if o != nil && !amadeus.IsNil(o.OtherServices) {
+	if o != nil && !utils.IsNil(o.OtherServices) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *IncludedResourcesMap) SetOtherServices(v map[string]interface{}) {
 
 // GetDetailedFareRules returns the DetailedFareRules field value if set, zero value otherwise.
 func (o *IncludedResourcesMap) GetDetailedFareRules() map[string]interface{} {
-	if o == nil || amadeus.IsNil(o.DetailedFareRules) {
+	if o == nil || utils.IsNil(o.DetailedFareRules) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *IncludedResourcesMap) GetDetailedFareRules() map[string]interface{} {
 // GetDetailedFareRulesOk returns a tuple with the DetailedFareRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IncludedResourcesMap) GetDetailedFareRulesOk() (map[string]interface{}, bool) {
-	if o == nil || amadeus.IsNil(o.DetailedFareRules) {
+	if o == nil || utils.IsNil(o.DetailedFareRules) {
 		return map[string]interface{}{}, false
 	}
 	return o.DetailedFareRules, true
@@ -163,7 +163,7 @@ func (o *IncludedResourcesMap) GetDetailedFareRulesOk() (map[string]interface{},
 
 // HasDetailedFareRules returns a boolean if a field has been set.
 func (o *IncludedResourcesMap) HasDetailedFareRules() bool {
-	if o != nil && !amadeus.IsNil(o.DetailedFareRules) {
+	if o != nil && !utils.IsNil(o.DetailedFareRules) {
 		return true
 	}
 
@@ -185,16 +185,16 @@ func (o IncludedResourcesMap) MarshalJSON() ([]byte, error) {
 
 func (o IncludedResourcesMap) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.CreditCardFees) {
+	if !utils.IsNil(o.CreditCardFees) {
 		toSerialize["credit-card-fees"] = o.CreditCardFees
 	}
-	if !amadeus.IsNil(o.Bags) {
+	if !utils.IsNil(o.Bags) {
 		toSerialize["bags"] = o.Bags
 	}
-	if !amadeus.IsNil(o.OtherServices) {
+	if !utils.IsNil(o.OtherServices) {
 		toSerialize["other-services"] = o.OtherServices
 	}
-	if !amadeus.IsNil(o.DetailedFareRules) {
+	if !utils.IsNil(o.DetailedFareRules) {
 		toSerialize["detailed-fare-rules"] = o.DetailedFareRules
 	}
 	return toSerialize, nil

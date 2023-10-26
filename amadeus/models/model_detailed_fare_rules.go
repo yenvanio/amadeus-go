@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the DetailedFareRules type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &DetailedFareRules{}
+var _ utils.MappedNullable = &DetailedFareRules{}
 
 // DetailedFareRules struct for DetailedFareRules
 type DetailedFareRules struct {
@@ -46,7 +46,7 @@ func NewDetailedFareRulesWithDefaults() *DetailedFareRules {
 
 // GetFareBasis returns the FareBasis field value if set, zero value otherwise.
 func (o *DetailedFareRules) GetFareBasis() string {
-	if o == nil || amadeus.IsNil(o.FareBasis) {
+	if o == nil || utils.IsNil(o.FareBasis) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *DetailedFareRules) GetFareBasis() string {
 // GetFareBasisOk returns a tuple with the FareBasis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DetailedFareRules) GetFareBasisOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.FareBasis) {
+	if o == nil || utils.IsNil(o.FareBasis) {
 		return nil, false
 	}
 	return o.FareBasis, true
@@ -64,7 +64,7 @@ func (o *DetailedFareRules) GetFareBasisOk() (*string, bool) {
 
 // HasFareBasis returns a boolean if a field has been set.
 func (o *DetailedFareRules) HasFareBasis() bool {
-	if o != nil && !amadeus.IsNil(o.FareBasis) {
+	if o != nil && !utils.IsNil(o.FareBasis) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *DetailedFareRules) SetFareBasis(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *DetailedFareRules) GetName() string {
-	if o == nil || amadeus.IsNil(o.Name) {
+	if o == nil || utils.IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *DetailedFareRules) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DetailedFareRules) GetNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Name) {
+	if o == nil || utils.IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -96,7 +96,7 @@ func (o *DetailedFareRules) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *DetailedFareRules) HasName() bool {
-	if o != nil && !amadeus.IsNil(o.Name) {
+	if o != nil && !utils.IsNil(o.Name) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *DetailedFareRules) SetName(v string) {
 
 // GetFareNotes returns the FareNotes field value if set, zero value otherwise.
 func (o *DetailedFareRules) GetFareNotes() TermAndCondition {
-	if o == nil || amadeus.IsNil(o.FareNotes) {
+	if o == nil || utils.IsNil(o.FareNotes) {
 		var ret TermAndCondition
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *DetailedFareRules) GetFareNotes() TermAndCondition {
 // GetFareNotesOk returns a tuple with the FareNotes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DetailedFareRules) GetFareNotesOk() (*TermAndCondition, bool) {
-	if o == nil || amadeus.IsNil(o.FareNotes) {
+	if o == nil || utils.IsNil(o.FareNotes) {
 		return nil, false
 	}
 	return o.FareNotes, true
@@ -128,7 +128,7 @@ func (o *DetailedFareRules) GetFareNotesOk() (*TermAndCondition, bool) {
 
 // HasFareNotes returns a boolean if a field has been set.
 func (o *DetailedFareRules) HasFareNotes() bool {
-	if o != nil && !amadeus.IsNil(o.FareNotes) {
+	if o != nil && !utils.IsNil(o.FareNotes) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *DetailedFareRules) SetFareNotes(v TermAndCondition) {
 
 // GetSegmentId returns the SegmentId field value if set, zero value otherwise.
 func (o *DetailedFareRules) GetSegmentId() string {
-	if o == nil || amadeus.IsNil(o.SegmentId) {
+	if o == nil || utils.IsNil(o.SegmentId) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *DetailedFareRules) GetSegmentId() string {
 // GetSegmentIdOk returns a tuple with the SegmentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DetailedFareRules) GetSegmentIdOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.SegmentId) {
+	if o == nil || utils.IsNil(o.SegmentId) {
 		return nil, false
 	}
 	return o.SegmentId, true
@@ -160,7 +160,7 @@ func (o *DetailedFareRules) GetSegmentIdOk() (*string, bool) {
 
 // HasSegmentId returns a boolean if a field has been set.
 func (o *DetailedFareRules) HasSegmentId() bool {
-	if o != nil && !amadeus.IsNil(o.SegmentId) {
+	if o != nil && !utils.IsNil(o.SegmentId) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o DetailedFareRules) MarshalJSON() ([]byte, error) {
 
 func (o DetailedFareRules) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.FareBasis) {
+	if !utils.IsNil(o.FareBasis) {
 		toSerialize["fareBasis"] = o.FareBasis
 	}
-	if !amadeus.IsNil(o.Name) {
+	if !utils.IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !amadeus.IsNil(o.FareNotes) {
+	if !utils.IsNil(o.FareNotes) {
 		toSerialize["fareNotes"] = o.FareNotes
 	}
-	if !amadeus.IsNil(o.SegmentId) {
+	if !utils.IsNil(o.SegmentId) {
 		toSerialize["segmentId"] = o.SegmentId
 	}
 	return toSerialize, nil

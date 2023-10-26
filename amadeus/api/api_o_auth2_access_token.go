@@ -1,9 +1,8 @@
-package authorization
+package api
 
 import (
 	"bytes"
 	"context"
-	api "github.com/yenvanio/amadeus-go/amadeus"
 	"github.com/yenvanio/amadeus-go/amadeus/models"
 	"io"
 	"net/http"
@@ -45,17 +44,17 @@ func (a *OAuth2AccessTokenAPIService) GetOauth2TokenInfoExecute(r ApiGetOauth2To
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
-		formFiles           []api.FormFile
+		formFiles           []FormFile
 		localVarReturnValue *models.AmadeusOAuth2Token
 	)
 
 	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "OAuth2AccessTokenAPIService.GetOauth2TokenInfo")
 	if err != nil {
-		return localVarReturnValue, nil, api.NewGenericOpenAPIErrorWithError(err.Error())
+		return localVarReturnValue, nil, NewGenericOpenAPIErrorWithError(err.Error())
 	}
 
 	localVarPath := localBasePath + "/security/oauth2/token/{access_token}"
-	localVarPath = strings.Replace(localVarPath, "{"+"access_token"+"}", url.PathEscape(api.ParameterValueToString(r.accessToken, "accessToken")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"access_token"+"}", url.PathEscape(ParameterValueToString(r.accessToken, "accessToken")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -65,7 +64,7 @@ func (a *OAuth2AccessTokenAPIService) GetOauth2TokenInfoExecute(r ApiGetOauth2To
 	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
-	localVarHTTPContentType := api.SelectHeaderContentType(localVarHTTPContentTypes)
+	localVarHTTPContentType := SelectHeaderContentType(localVarHTTPContentTypes)
 	if localVarHTTPContentType != "" {
 		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
 	}
@@ -74,7 +73,7 @@ func (a *OAuth2AccessTokenAPIService) GetOauth2TokenInfoExecute(r ApiGetOauth2To
 	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := api.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
@@ -96,7 +95,7 @@ func (a *OAuth2AccessTokenAPIService) GetOauth2TokenInfoExecute(r ApiGetOauth2To
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := api.NewGenericOpenAPIErrorWithErrorAndBody(localVarHTTPResponse.Status, localVarBody)
+		newErr := NewGenericOpenAPIErrorWithErrorAndBody(localVarHTTPResponse.Status, localVarBody)
 		if localVarHTTPResponse.StatusCode == 404 {
 			var v models.ErrorResponse
 			err = a.Client.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -104,7 +103,7 @@ func (a *OAuth2AccessTokenAPIService) GetOauth2TokenInfoExecute(r ApiGetOauth2To
 				newErr.SetError(err.Error())
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.SetError(api.FormatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.SetError(FormatErrorMessage(localVarHTTPResponse.Status, &v))
 			newErr.SetModel(v)
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -112,7 +111,7 @@ func (a *OAuth2AccessTokenAPIService) GetOauth2TokenInfoExecute(r ApiGetOauth2To
 
 	err = a.Client.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := api.NewGenericOpenAPIErrorWithErrorAndBody(err.Error(), localVarBody)
+		newErr := NewGenericOpenAPIErrorWithErrorAndBody(err.Error(), localVarBody)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
@@ -120,26 +119,11 @@ func (a *OAuth2AccessTokenAPIService) GetOauth2TokenInfoExecute(r ApiGetOauth2To
 }
 
 type ApiOauth2TokenRequest struct {
-	ctx          context.Context
+	Context      context.Context
 	ApiService   *OAuth2AccessTokenAPIService
-	grantType    *string
-	clientId     *string
-	clientSecret *string
-}
-
-func (r ApiOauth2TokenRequest) GrantType(grantType string) ApiOauth2TokenRequest {
-	r.grantType = &grantType
-	return r
-}
-
-func (r ApiOauth2TokenRequest) ClientId(clientId string) ApiOauth2TokenRequest {
-	r.clientId = &clientId
-	return r
-}
-
-func (r ApiOauth2TokenRequest) ClientSecret(clientSecret string) ApiOauth2TokenRequest {
-	r.clientSecret = &clientSecret
-	return r
+	GrantType    *string
+	ClientId     *string
+	ClientSecret *string
 }
 
 func (r ApiOauth2TokenRequest) Execute() (*models.AmadeusOAuth2Token, *http.Response, error) {
@@ -149,7 +133,7 @@ func (r ApiOauth2TokenRequest) Execute() (*models.AmadeusOAuth2Token, *http.Resp
 /*
 Oauth2Token The OAuth 2.0 token endpoint
 
-The token endpoint is used by the client to obtain an access token by presenting its authorization grant.
+The token endpoint is used by the api to obtain an access token by presenting its authorization grant.
 To learn more about this endpoint please refer to the specification at https://tools.ietf.org/html/rfc6749#section-3.2
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -158,7 +142,7 @@ To learn more about this endpoint please refer to the specification at https://t
 func (a *OAuth2AccessTokenAPIService) Oauth2Token(ctx context.Context) ApiOauth2TokenRequest {
 	return ApiOauth2TokenRequest{
 		ApiService: a,
-		ctx:        ctx,
+		Context:    ctx,
 	}
 }
 
@@ -169,35 +153,35 @@ func (a *OAuth2AccessTokenAPIService) Oauth2TokenExecute(r ApiOauth2TokenRequest
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
-		formFiles           []api.FormFile
+		formFiles           []FormFile
 		localVarReturnValue *models.AmadeusOAuth2Token
 	)
 
-	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.ctx, "OAuth2AccessTokenAPIService.Oauth2Token")
+	localBasePath, err := a.Client.Cfg.ServerURLWithContext(r.Context, "OAuth2AccessTokenAPIService.Oauth2Token")
 	if err != nil {
-		return localVarReturnValue, nil, api.NewGenericOpenAPIErrorWithError(err.Error())
+		return localVarReturnValue, nil, NewGenericOpenAPIErrorWithError(err.Error())
 	}
 
-	localVarPath := localBasePath + "/security/oauth2/token"
+	localVarPath := localBasePath + "/v1/security/oauth2/token"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.grantType == nil {
-		return localVarReturnValue, nil, api.ReportError("grantType is required and must be specified")
+	if r.GrantType == nil {
+		return localVarReturnValue, nil, ReportError("grantType is required and must be specified")
 	}
-	if r.clientId == nil {
-		return localVarReturnValue, nil, api.ReportError("clientId is required and must be specified")
+	if r.ClientId == nil {
+		return localVarReturnValue, nil, ReportError("clientId is required and must be specified")
 	}
-	if r.clientSecret == nil {
-		return localVarReturnValue, nil, api.ReportError("clientSecret is required and must be specified")
+	if r.ClientSecret == nil {
+		return localVarReturnValue, nil, ReportError("clientSecret is required and must be specified")
 	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
-	localVarHTTPContentType := api.SelectHeaderContentType(localVarHTTPContentTypes)
+	localVarHTTPContentType := SelectHeaderContentType(localVarHTTPContentTypes)
 	if localVarHTTPContentType != "" {
 		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
 	}
@@ -206,14 +190,14 @@ func (a *OAuth2AccessTokenAPIService) Oauth2TokenExecute(r ApiOauth2TokenRequest
 	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
-	localVarHTTPHeaderAccept := api.SelectHeaderAccept(localVarHTTPHeaderAccepts)
+	localVarHTTPHeaderAccept := SelectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	api.ParameterAddToHeaderOrQuery(localVarFormParams, "grant_type", r.grantType, "")
-	api.ParameterAddToHeaderOrQuery(localVarFormParams, "client_id", r.clientId, "")
-	api.ParameterAddToHeaderOrQuery(localVarFormParams, "client_secret", r.clientSecret, "")
-	req, err := a.Client.PrepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	ParameterAddToHeaderOrQuery(localVarFormParams, "grant_type", r.GrantType, "")
+	ParameterAddToHeaderOrQuery(localVarFormParams, "client_id", r.ClientId, "")
+	ParameterAddToHeaderOrQuery(localVarFormParams, "client_secret", r.ClientSecret, "")
+	req, err := a.Client.PrepareRequest(r.Context, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
 	}
@@ -231,7 +215,7 @@ func (a *OAuth2AccessTokenAPIService) Oauth2TokenExecute(r ApiOauth2TokenRequest
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := api.NewGenericOpenAPIErrorWithErrorAndBody(localVarHTTPResponse.Status, localVarBody)
+		newErr := NewGenericOpenAPIErrorWithErrorAndBody(localVarHTTPResponse.Status, localVarBody)
 		if localVarHTTPResponse.StatusCode == 401 {
 			var v models.ErrorResponse
 			err = a.Client.Decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -239,7 +223,7 @@ func (a *OAuth2AccessTokenAPIService) Oauth2TokenExecute(r ApiOauth2TokenRequest
 				newErr.SetError(err.Error())
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.SetError(api.FormatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.SetError(FormatErrorMessage(localVarHTTPResponse.Status, &v))
 			newErr.SetModel(v)
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
@@ -250,7 +234,7 @@ func (a *OAuth2AccessTokenAPIService) Oauth2TokenExecute(r ApiOauth2TokenRequest
 				newErr.SetError(err.Error())
 				return localVarReturnValue, localVarHTTPResponse, newErr
 			}
-			newErr.SetError(api.FormatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.SetError(FormatErrorMessage(localVarHTTPResponse.Status, &v))
 			newErr.SetModel(v)
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
@@ -258,7 +242,7 @@ func (a *OAuth2AccessTokenAPIService) Oauth2TokenExecute(r ApiOauth2TokenRequest
 
 	err = a.Client.Decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 	if err != nil {
-		newErr := api.NewGenericOpenAPIErrorWithErrorAndBody(err.Error(), localVarBody)
+		newErr := NewGenericOpenAPIErrorWithErrorAndBody(err.Error(), localVarBody)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 

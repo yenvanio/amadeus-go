@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the ContactDictionary type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &ContactDictionary{}
+var _ utils.MappedNullable = &ContactDictionary{}
 
 // ContactDictionary represents a contact
 type ContactDictionary struct {
@@ -46,7 +46,7 @@ func NewContactDictionaryWithDefaults() *ContactDictionary {
 
 // GetAddresseeName returns the AddresseeName field value if set, zero value otherwise.
 func (o *ContactDictionary) GetAddresseeName() Name {
-	if o == nil || amadeus.IsNil(o.AddresseeName) {
+	if o == nil || utils.IsNil(o.AddresseeName) {
 		var ret Name
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ContactDictionary) GetAddresseeName() Name {
 // GetAddresseeNameOk returns a tuple with the AddresseeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContactDictionary) GetAddresseeNameOk() (*Name, bool) {
-	if o == nil || amadeus.IsNil(o.AddresseeName) {
+	if o == nil || utils.IsNil(o.AddresseeName) {
 		return nil, false
 	}
 	return o.AddresseeName, true
@@ -64,7 +64,7 @@ func (o *ContactDictionary) GetAddresseeNameOk() (*Name, bool) {
 
 // HasAddresseeName returns a boolean if a field has been set.
 func (o *ContactDictionary) HasAddresseeName() bool {
-	if o != nil && !amadeus.IsNil(o.AddresseeName) {
+	if o != nil && !utils.IsNil(o.AddresseeName) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ContactDictionary) SetAddresseeName(v Name) {
 
 // GetAddress returns the Address field value if set, zero value otherwise.
 func (o *ContactDictionary) GetAddress() Address {
-	if o == nil || amadeus.IsNil(o.Address) {
+	if o == nil || utils.IsNil(o.Address) {
 		var ret Address
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ContactDictionary) GetAddress() Address {
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContactDictionary) GetAddressOk() (*Address, bool) {
-	if o == nil || amadeus.IsNil(o.Address) {
+	if o == nil || utils.IsNil(o.Address) {
 		return nil, false
 	}
 	return o.Address, true
@@ -96,7 +96,7 @@ func (o *ContactDictionary) GetAddressOk() (*Address, bool) {
 
 // HasAddress returns a boolean if a field has been set.
 func (o *ContactDictionary) HasAddress() bool {
-	if o != nil && !amadeus.IsNil(o.Address) {
+	if o != nil && !utils.IsNil(o.Address) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ContactDictionary) SetAddress(v Address) {
 
 // GetLanguage returns the Language field value if set, zero value otherwise.
 func (o *ContactDictionary) GetLanguage() string {
-	if o == nil || amadeus.IsNil(o.Language) {
+	if o == nil || utils.IsNil(o.Language) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ContactDictionary) GetLanguage() string {
 // GetLanguageOk returns a tuple with the Language field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContactDictionary) GetLanguageOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Language) {
+	if o == nil || utils.IsNil(o.Language) {
 		return nil, false
 	}
 	return o.Language, true
@@ -128,7 +128,7 @@ func (o *ContactDictionary) GetLanguageOk() (*string, bool) {
 
 // HasLanguage returns a boolean if a field has been set.
 func (o *ContactDictionary) HasLanguage() bool {
-	if o != nil && !amadeus.IsNil(o.Language) {
+	if o != nil && !utils.IsNil(o.Language) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ContactDictionary) SetLanguage(v string) {
 
 // GetPurpose returns the Purpose field value if set, zero value otherwise.
 func (o *ContactDictionary) GetPurpose() ContactPurpose {
-	if o == nil || amadeus.IsNil(o.Purpose) {
+	if o == nil || utils.IsNil(o.Purpose) {
 		var ret ContactPurpose
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ContactDictionary) GetPurpose() ContactPurpose {
 // GetPurposeOk returns a tuple with the Purpose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContactDictionary) GetPurposeOk() (*ContactPurpose, bool) {
-	if o == nil || amadeus.IsNil(o.Purpose) {
+	if o == nil || utils.IsNil(o.Purpose) {
 		return nil, false
 	}
 	return o.Purpose, true
@@ -160,7 +160,7 @@ func (o *ContactDictionary) GetPurposeOk() (*ContactPurpose, bool) {
 
 // HasPurpose returns a boolean if a field has been set.
 func (o *ContactDictionary) HasPurpose() bool {
-	if o != nil && !amadeus.IsNil(o.Purpose) {
+	if o != nil && !utils.IsNil(o.Purpose) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o ContactDictionary) MarshalJSON() ([]byte, error) {
 
 func (o ContactDictionary) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.AddresseeName) {
+	if !utils.IsNil(o.AddresseeName) {
 		toSerialize["addresseeName"] = o.AddresseeName
 	}
-	if !amadeus.IsNil(o.Address) {
+	if !utils.IsNil(o.Address) {
 		toSerialize["address"] = o.Address
 	}
-	if !amadeus.IsNil(o.Language) {
+	if !utils.IsNil(o.Language) {
 		toSerialize["language"] = o.Language
 	}
-	if !amadeus.IsNil(o.Purpose) {
+	if !utils.IsNil(o.Purpose) {
 		toSerialize["purpose"] = o.Purpose
 	}
 	return toSerialize, nil

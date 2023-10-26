@@ -1,7 +1,7 @@
 /*
 Amadeus OAuth2 Login
 
-Amadeus for Developers uses OAuth2 to authenticate access requests. OAuth2 generates an access token which grants the client permission to access a protected resource. The method to acquire a token is called grant. There are different types of OAuth2 grants. Amadeus for Developers uses the Client Credentials Grant.   https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262 
+Amadeus for Developers uses OAuth2 to authenticate access requests. OAuth2 generates an access token which grants the api permission to access a protected resource. The method to acquire a token is called grant. There are different types of OAuth2 grants. Amadeus for Developers uses the Client Credentials Grant.   https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262
 
 API version: 1.0.0
 */
@@ -12,10 +12,11 @@ package models
 
 import (
 	"encoding/json"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the ErrorResponse type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ErrorResponse{}
+var _ utils.MappedNullable = &ErrorResponse{}
 
 // ErrorResponse Error responses are sent when an error (e.g. unauthorized, bad request, ...) occurred.
 type ErrorResponse struct {

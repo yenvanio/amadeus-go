@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Payment type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Payment{}
+var _ utils.MappedNullable = &Payment{}
 
 // Payment struct for Payment
 type Payment struct {
@@ -46,7 +46,7 @@ func NewPaymentWithDefaults() *Payment {
 
 // GetBrand returns the Brand field value if set, zero value otherwise.
 func (o *Payment) GetBrand() PaymentBrand {
-	if o == nil || amadeus.IsNil(o.Brand) {
+	if o == nil || utils.IsNil(o.Brand) {
 		var ret PaymentBrand
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *Payment) GetBrand() PaymentBrand {
 // GetBrandOk returns a tuple with the Brand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Payment) GetBrandOk() (*PaymentBrand, bool) {
-	if o == nil || amadeus.IsNil(o.Brand) {
+	if o == nil || utils.IsNil(o.Brand) {
 		return nil, false
 	}
 	return o.Brand, true
@@ -64,7 +64,7 @@ func (o *Payment) GetBrandOk() (*PaymentBrand, bool) {
 
 // HasBrand returns a boolean if a field has been set.
 func (o *Payment) HasBrand() bool {
-	if o != nil && !amadeus.IsNil(o.Brand) {
+	if o != nil && !utils.IsNil(o.Brand) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *Payment) SetBrand(v PaymentBrand) {
 
 // GetBinNumber returns the BinNumber field value if set, zero value otherwise.
 func (o *Payment) GetBinNumber() int32 {
-	if o == nil || amadeus.IsNil(o.BinNumber) {
+	if o == nil || utils.IsNil(o.BinNumber) {
 		var ret int32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *Payment) GetBinNumber() int32 {
 // GetBinNumberOk returns a tuple with the BinNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Payment) GetBinNumberOk() (*int32, bool) {
-	if o == nil || amadeus.IsNil(o.BinNumber) {
+	if o == nil || utils.IsNil(o.BinNumber) {
 		return nil, false
 	}
 	return o.BinNumber, true
@@ -96,7 +96,7 @@ func (o *Payment) GetBinNumberOk() (*int32, bool) {
 
 // HasBinNumber returns a boolean if a field has been set.
 func (o *Payment) HasBinNumber() bool {
-	if o != nil && !amadeus.IsNil(o.BinNumber) {
+	if o != nil && !utils.IsNil(o.BinNumber) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *Payment) SetBinNumber(v int32) {
 
 // GetFlightOfferIds returns the FlightOfferIds field value if set, zero value otherwise.
 func (o *Payment) GetFlightOfferIds() []string {
-	if o == nil || amadeus.IsNil(o.FlightOfferIds) {
+	if o == nil || utils.IsNil(o.FlightOfferIds) {
 		var ret []string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *Payment) GetFlightOfferIds() []string {
 // GetFlightOfferIdsOk returns a tuple with the FlightOfferIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Payment) GetFlightOfferIdsOk() ([]string, bool) {
-	if o == nil || amadeus.IsNil(o.FlightOfferIds) {
+	if o == nil || utils.IsNil(o.FlightOfferIds) {
 		return nil, false
 	}
 	return o.FlightOfferIds, true
@@ -128,7 +128,7 @@ func (o *Payment) GetFlightOfferIdsOk() ([]string, bool) {
 
 // HasFlightOfferIds returns a boolean if a field has been set.
 func (o *Payment) HasFlightOfferIds() bool {
-	if o != nil && !amadeus.IsNil(o.FlightOfferIds) {
+	if o != nil && !utils.IsNil(o.FlightOfferIds) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o Payment) MarshalJSON() ([]byte, error) {
 
 func (o Payment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Brand) {
+	if !utils.IsNil(o.Brand) {
 		toSerialize["brand"] = o.Brand
 	}
-	if !amadeus.IsNil(o.BinNumber) {
+	if !utils.IsNil(o.BinNumber) {
 		toSerialize["binNumber"] = o.BinNumber
 	}
-	if !amadeus.IsNil(o.FlightOfferIds) {
+	if !utils.IsNil(o.FlightOfferIds) {
 		toSerialize["flightOfferIds"] = o.FlightOfferIds
 	}
 	return toSerialize, nil

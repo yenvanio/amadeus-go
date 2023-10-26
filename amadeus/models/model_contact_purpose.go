@@ -20,7 +20,7 @@ type ContactPurpose string
 
 // List of ContactPurpose
 const (
-	STANDARD                      ContactPurpose = "STANDARD"
+	STANDARD_CONTACT_PURPOSE      ContactPurpose = "STANDARD"
 	INVOICE                       ContactPurpose = "INVOICE"
 	STANDARD_WITHOUT_TRANSMISSION ContactPurpose = "STANDARD_WITHOUT_TRANSMISSION"
 )
@@ -110,4 +110,3 @@ func (v *NullableContactPurpose) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

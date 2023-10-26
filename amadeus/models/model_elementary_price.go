@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the ElementaryPrice type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &ElementaryPrice{}
+var _ utils.MappedNullable = &ElementaryPrice{}
 
 // ElementaryPrice elementaryPrice
 type ElementaryPrice struct {
@@ -45,7 +45,7 @@ func NewElementaryPriceWithDefaults() *ElementaryPrice {
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
 func (o *ElementaryPrice) GetAmount() string {
-	if o == nil || amadeus.IsNil(o.Amount) {
+	if o == nil || utils.IsNil(o.Amount) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ElementaryPrice) GetAmount() string {
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ElementaryPrice) GetAmountOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Amount) {
+	if o == nil || utils.IsNil(o.Amount) {
 		return nil, false
 	}
 	return o.Amount, true
@@ -63,7 +63,7 @@ func (o *ElementaryPrice) GetAmountOk() (*string, bool) {
 
 // HasAmount returns a boolean if a field has been set.
 func (o *ElementaryPrice) HasAmount() bool {
-	if o != nil && !amadeus.IsNil(o.Amount) {
+	if o != nil && !utils.IsNil(o.Amount) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ElementaryPrice) SetAmount(v string) {
 
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
 func (o *ElementaryPrice) GetCurrencyCode() string {
-	if o == nil || amadeus.IsNil(o.CurrencyCode) {
+	if o == nil || utils.IsNil(o.CurrencyCode) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ElementaryPrice) GetCurrencyCode() string {
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ElementaryPrice) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.CurrencyCode) {
+	if o == nil || utils.IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return o.CurrencyCode, true
@@ -95,7 +95,7 @@ func (o *ElementaryPrice) GetCurrencyCodeOk() (*string, bool) {
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *ElementaryPrice) HasCurrencyCode() bool {
-	if o != nil && !amadeus.IsNil(o.CurrencyCode) {
+	if o != nil && !utils.IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -117,10 +117,10 @@ func (o ElementaryPrice) MarshalJSON() ([]byte, error) {
 
 func (o ElementaryPrice) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Amount) {
+	if !utils.IsNil(o.Amount) {
 		toSerialize["amount"] = o.Amount
 	}
-	if !amadeus.IsNil(o.CurrencyCode) {
+	if !utils.IsNil(o.CurrencyCode) {
 		toSerialize["currencyCode"] = o.CurrencyCode
 	}
 	return toSerialize, nil

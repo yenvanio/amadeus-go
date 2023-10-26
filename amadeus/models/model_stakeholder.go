@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Stakeholder type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Stakeholder{}
+var _ utils.MappedNullable = &Stakeholder{}
 
 // Stakeholder stakeholder definition
 type Stakeholder struct {
@@ -49,7 +49,7 @@ func NewStakeholderWithDefaults() *Stakeholder {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *Stakeholder) GetId() string {
-	if o == nil || amadeus.IsNil(o.Id) {
+	if o == nil || utils.IsNil(o.Id) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *Stakeholder) GetId() string {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Stakeholder) GetIdOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Id) {
+	if o == nil || utils.IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -67,7 +67,7 @@ func (o *Stakeholder) GetIdOk() (*string, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *Stakeholder) HasId() bool {
-	if o != nil && !amadeus.IsNil(o.Id) {
+	if o != nil && !utils.IsNil(o.Id) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *Stakeholder) SetId(v string) {
 
 // GetDateOfBirth returns the DateOfBirth field value if set, zero value otherwise.
 func (o *Stakeholder) GetDateOfBirth() string {
-	if o == nil || amadeus.IsNil(o.DateOfBirth) {
+	if o == nil || utils.IsNil(o.DateOfBirth) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *Stakeholder) GetDateOfBirth() string {
 // GetDateOfBirthOk returns a tuple with the DateOfBirth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Stakeholder) GetDateOfBirthOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.DateOfBirth) {
+	if o == nil || utils.IsNil(o.DateOfBirth) {
 		return nil, false
 	}
 	return o.DateOfBirth, true
@@ -99,7 +99,7 @@ func (o *Stakeholder) GetDateOfBirthOk() (*string, bool) {
 
 // HasDateOfBirth returns a boolean if a field has been set.
 func (o *Stakeholder) HasDateOfBirth() bool {
-	if o != nil && !amadeus.IsNil(o.DateOfBirth) {
+	if o != nil && !utils.IsNil(o.DateOfBirth) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *Stakeholder) SetDateOfBirth(v string) {
 
 // GetGender returns the Gender field value if set, zero value otherwise.
 func (o *Stakeholder) GetGender() StakeholderGender {
-	if o == nil || amadeus.IsNil(o.Gender) {
+	if o == nil || utils.IsNil(o.Gender) {
 		var ret StakeholderGender
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *Stakeholder) GetGender() StakeholderGender {
 // GetGenderOk returns a tuple with the Gender field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Stakeholder) GetGenderOk() (*StakeholderGender, bool) {
-	if o == nil || amadeus.IsNil(o.Gender) {
+	if o == nil || utils.IsNil(o.Gender) {
 		return nil, false
 	}
 	return o.Gender, true
@@ -131,7 +131,7 @@ func (o *Stakeholder) GetGenderOk() (*StakeholderGender, bool) {
 
 // HasGender returns a boolean if a field has been set.
 func (o *Stakeholder) HasGender() bool {
-	if o != nil && !amadeus.IsNil(o.Gender) {
+	if o != nil && !utils.IsNil(o.Gender) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *Stakeholder) SetGender(v StakeholderGender) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Stakeholder) GetName() Name {
-	if o == nil || amadeus.IsNil(o.Name) {
+	if o == nil || utils.IsNil(o.Name) {
 		var ret Name
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *Stakeholder) GetName() Name {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Stakeholder) GetNameOk() (*Name, bool) {
-	if o == nil || amadeus.IsNil(o.Name) {
+	if o == nil || utils.IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -163,7 +163,7 @@ func (o *Stakeholder) GetNameOk() (*Name, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *Stakeholder) HasName() bool {
-	if o != nil && !amadeus.IsNil(o.Name) {
+	if o != nil && !utils.IsNil(o.Name) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *Stakeholder) SetName(v Name) {
 
 // GetDocuments returns the Documents field value if set, zero value otherwise.
 func (o *Stakeholder) GetDocuments() []IdentityDocument {
-	if o == nil || amadeus.IsNil(o.Documents) {
+	if o == nil || utils.IsNil(o.Documents) {
 		var ret []IdentityDocument
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *Stakeholder) GetDocuments() []IdentityDocument {
 // GetDocumentsOk returns a tuple with the Documents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Stakeholder) GetDocumentsOk() ([]IdentityDocument, bool) {
-	if o == nil || amadeus.IsNil(o.Documents) {
+	if o == nil || utils.IsNil(o.Documents) {
 		return nil, false
 	}
 	return o.Documents, true
@@ -195,7 +195,7 @@ func (o *Stakeholder) GetDocumentsOk() ([]IdentityDocument, bool) {
 
 // HasDocuments returns a boolean if a field has been set.
 func (o *Stakeholder) HasDocuments() bool {
-	if o != nil && !amadeus.IsNil(o.Documents) {
+	if o != nil && !utils.IsNil(o.Documents) {
 		return true
 	}
 
@@ -217,19 +217,19 @@ func (o Stakeholder) MarshalJSON() ([]byte, error) {
 
 func (o Stakeholder) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Id) {
+	if !utils.IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !amadeus.IsNil(o.DateOfBirth) {
+	if !utils.IsNil(o.DateOfBirth) {
 		toSerialize["dateOfBirth"] = o.DateOfBirth
 	}
-	if !amadeus.IsNil(o.Gender) {
+	if !utils.IsNil(o.Gender) {
 		toSerialize["gender"] = o.Gender
 	}
-	if !amadeus.IsNil(o.Name) {
+	if !utils.IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !amadeus.IsNil(o.Documents) {
+	if !utils.IsNil(o.Documents) {
 		toSerialize["documents"] = o.Documents
 	}
 	return toSerialize, nil

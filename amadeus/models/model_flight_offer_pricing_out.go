@@ -12,19 +12,18 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the FlightOfferPricingOut type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &FlightOfferPricingOut{}
+var _ utils.MappedNullable = &FlightOfferPricingOut{}
 
 // FlightOfferPricingOut priced flight Offers and conditions
 type FlightOfferPricingOut struct {
 	// the resource name
 	Type string `json:"type"`
 	// list of flight offer to price
-	FlightOffers []openapi.FlightOffer       `json:"flightOffers"`
+	FlightOffers []FlightOffer       `json:"flightOffers"`
 	BookingRequirements *BookingRequirements `json:"bookingRequirements,omitempty"`
 }
 
@@ -32,7 +31,7 @@ type FlightOfferPricingOut struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFlightOfferPricingOut(type_ string, flightOffers []openapi.FlightOffer) *FlightOfferPricingOut {
+func NewFlightOfferPricingOut(type_ string, flightOffers []FlightOffer) *FlightOfferPricingOut {
 	this := FlightOfferPricingOut{}
 	this.Type = type_
 	this.FlightOffers = flightOffers
@@ -72,9 +71,9 @@ func (o *FlightOfferPricingOut) SetType(v string) {
 }
 
 // GetFlightOffers returns the FlightOffers field value
-func (o *FlightOfferPricingOut) GetFlightOffers() []openapi.FlightOffer {
+func (o *FlightOfferPricingOut) GetFlightOffers() []FlightOffer {
 	if o == nil {
-		var ret []openapi.FlightOffer
+		var ret []FlightOffer
 		return ret
 	}
 
@@ -83,7 +82,7 @@ func (o *FlightOfferPricingOut) GetFlightOffers() []openapi.FlightOffer {
 
 // GetFlightOffersOk returns a tuple with the FlightOffers field value
 // and a boolean to check if the value has been set.
-func (o *FlightOfferPricingOut) GetFlightOffersOk() ([]openapi.FlightOffer, bool) {
+func (o *FlightOfferPricingOut) GetFlightOffersOk() ([]FlightOffer, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +90,13 @@ func (o *FlightOfferPricingOut) GetFlightOffersOk() ([]openapi.FlightOffer, bool
 }
 
 // SetFlightOffers sets field value
-func (o *FlightOfferPricingOut) SetFlightOffers(v []openapi.FlightOffer) {
+func (o *FlightOfferPricingOut) SetFlightOffers(v []FlightOffer) {
 	o.FlightOffers = v
 }
 
 // GetBookingRequirements returns the BookingRequirements field value if set, zero value otherwise.
 func (o *FlightOfferPricingOut) GetBookingRequirements() BookingRequirements {
-	if o == nil || amadeus.IsNil(o.BookingRequirements) {
+	if o == nil || utils.IsNil(o.BookingRequirements) {
 		var ret BookingRequirements
 		return ret
 	}
@@ -107,7 +106,7 @@ func (o *FlightOfferPricingOut) GetBookingRequirements() BookingRequirements {
 // GetBookingRequirementsOk returns a tuple with the BookingRequirements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlightOfferPricingOut) GetBookingRequirementsOk() (*BookingRequirements, bool) {
-	if o == nil || amadeus.IsNil(o.BookingRequirements) {
+	if o == nil || utils.IsNil(o.BookingRequirements) {
 		return nil, false
 	}
 	return o.BookingRequirements, true
@@ -115,7 +114,7 @@ func (o *FlightOfferPricingOut) GetBookingRequirementsOk() (*BookingRequirements
 
 // HasBookingRequirements returns a boolean if a field has been set.
 func (o *FlightOfferPricingOut) HasBookingRequirements() bool {
-	if o != nil && !amadeus.IsNil(o.BookingRequirements) {
+	if o != nil && !utils.IsNil(o.BookingRequirements) {
 		return true
 	}
 
@@ -139,7 +138,7 @@ func (o FlightOfferPricingOut) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["type"] = o.Type
 	toSerialize["flightOffers"] = o.FlightOffers
-	if !amadeus.IsNil(o.BookingRequirements) {
+	if !utils.IsNil(o.BookingRequirements) {
 		toSerialize["bookingRequirements"] = o.BookingRequirements
 	}
 	return toSerialize, nil

@@ -4,14 +4,14 @@ import (
 	"context"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/api"
 	"testing"
 )
 
 func Test_openapi_OAuth2AccessTokenAPIService(t *testing.T) {
 
-	configuration := amadeus.NewConfiguration()
-	apiClient := amadeus.NewAPIClient(configuration)
+	configuration := api.NewConfiguration()
+	apiClient := api.NewAPIClient(configuration)
 
 	t.Run("Test OAuth2AccessTokenAPIService GetOauth2TokenInfo", func(t *testing.T) {
 		var accessToken string

@@ -55,15 +55,42 @@ ctx = context.WithValue(context.Background(), openapi.ContextOperationServerVari
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://test.api.amadeus.com/v1*
+All URIs are relative to *https://test.api.amadeus.com*
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*OAuth2AccessTokenAPI* | [**GetOauth2TokenInfo**](docs/OAuth2AccessTokenAPI.md#getoauth2tokeninfo) | **Get** /security/oauth2/token/{access_token} | The OAuth 2.0 token info endpoint
-*OAuth2AccessTokenAPI* | [**Oauth2Token**](docs/OAuth2AccessTokenAPI.md#oauth2token) | **Post** /security/oauth2/token | The OAuth 2.0 token endpoint
-*ShoppingAPI* | [**GetFlightOffers**](docs/ShoppingAPI.md#getflightoffers) | **Get** /shopping/flight-offers | Return list of Flight Offers based on searching criteria.
-*ShoppingAPI* | [**SearchFlightOffers**](docs/ShoppingAPI.md#searchflightoffers) | **Post** /shopping/flight-offers | Return list of Flight Offers based on posted searching criteria.
-*ShoppingAPI* | [**QuoteAirOffers**](docs/ShoppingAPI.md#quoteairoffers) | **Post** /shopping/flight-offers/pricing | Confirm pricing of given flightOffers.
+Class | Method | HTTP request                                   | Description
+------------ | ------------- |------------------------------------------------| -------------
+*OAuth2AccessTokenAPI* | [**GetOauth2TokenInfo**](docs/OAuth2AccessTokenAPI.md#getoauth2tokeninfo) | **Get** /v1/security/oauth2/token/{access_token} | The OAuth 2.0 token info endpoint
+*OAuth2AccessTokenAPI* | [**Oauth2Token**](docs/OAuth2AccessTokenAPI.md#oauth2token) | **Post** /v1/security/oauth2/token   | The OAuth 2.0 token endpoint
+*ShoppingAPI* | [**GetFlightOffers**](docs/ShoppingAPI.md#getflightoffers) | **Get** /v2/shopping/flight-offers         | Return list of Flight Offers based on searching criteria.
+*ShoppingAPI* | [**SearchFlightOffers**](docs/ShoppingAPI.md#searchflightoffers) | **Post** /v2/shopping/flight-offers     | Return list of Flight Offers based on posted searching criteria.
+*ShoppingAPI* | [**QuoteAirOffers**](docs/ShoppingAPI.md#quoteairoffers) | **Post** /v1/shopping/flight-offers/pricing | Confirm pricing of given flightOffers.
+
+
+## Documentation For Authorization
+
+All endpoints are required to be authenticated by an access token. An access token can be generated with a Client ID and Secret.
+These must be obtained by signing up with Amadeus.
+
+See the example below to generate and use the access token.
+
+```go
+	// Initialize Client
+	amadeusClient := api.NewAPIClient(api.NewConfiguration())
+	
+	// Generate Access Token
+	token, _, err := amadeusClient.OAuth2AccessTokenAPI.Oauth2TokenExecute(api.ApiOauth2TokenRequest{
+		Context:      ctx,
+		ApiService:   amadeusClient.OAuth2AccessTokenAPI,
+		GrantType:    &GrantType,
+		ClientId:     &ClientId,
+		ClientSecret: &ClientSecret,
+	})
+	
+	// Add Auth Token to Header
+	headers := amadeusClient.Cfg.DefaultHeader
+	headers["Authorization"] = fmt.Sprintf("Bearer %s", *token.AccessToken)
+	amadeusClient.Cfg.DefaultHeader = headers
+```
 
 
 ## Documentation For Models
@@ -162,11 +189,6 @@ Class | Method | HTTP request | Description
  - [TravelerPricing](docs/TravelerPricing.md)
  - [TravelerPricingFareOption](docs/TravelerPricingFareOption.md)
  - [TravelerType](docs/TravelerType.md)
-
-
-## Documentation For Authorization
-
-Endpoints do not require authorization.
 
 
 ## Documentation for Utility Methods

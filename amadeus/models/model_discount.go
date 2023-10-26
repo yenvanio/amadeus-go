@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the Discount type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &Discount{}
+var _ utils.MappedNullable = &Discount{}
 
 // Discount traveler discount
 type Discount struct {
@@ -49,7 +49,7 @@ func NewDiscountWithDefaults() *Discount {
 
 // GetSubType returns the SubType field value if set, zero value otherwise.
 func (o *Discount) GetSubType() DiscountType {
-	if o == nil || amadeus.IsNil(o.SubType) {
+	if o == nil || utils.IsNil(o.SubType) {
 		var ret DiscountType
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *Discount) GetSubType() DiscountType {
 // GetSubTypeOk returns a tuple with the SubType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Discount) GetSubTypeOk() (*DiscountType, bool) {
-	if o == nil || amadeus.IsNil(o.SubType) {
+	if o == nil || utils.IsNil(o.SubType) {
 		return nil, false
 	}
 	return o.SubType, true
@@ -67,7 +67,7 @@ func (o *Discount) GetSubTypeOk() (*DiscountType, bool) {
 
 // HasSubType returns a boolean if a field has been set.
 func (o *Discount) HasSubType() bool {
-	if o != nil && !amadeus.IsNil(o.SubType) {
+	if o != nil && !utils.IsNil(o.SubType) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *Discount) SetSubType(v DiscountType) {
 
 // GetCityName returns the CityName field value if set, zero value otherwise.
 func (o *Discount) GetCityName() string {
-	if o == nil || amadeus.IsNil(o.CityName) {
+	if o == nil || utils.IsNil(o.CityName) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *Discount) GetCityName() string {
 // GetCityNameOk returns a tuple with the CityName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Discount) GetCityNameOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.CityName) {
+	if o == nil || utils.IsNil(o.CityName) {
 		return nil, false
 	}
 	return o.CityName, true
@@ -99,7 +99,7 @@ func (o *Discount) GetCityNameOk() (*string, bool) {
 
 // HasCityName returns a boolean if a field has been set.
 func (o *Discount) HasCityName() bool {
-	if o != nil && !amadeus.IsNil(o.CityName) {
+	if o != nil && !utils.IsNil(o.CityName) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *Discount) SetCityName(v string) {
 
 // GetTravelerType returns the TravelerType field value if set, zero value otherwise.
 func (o *Discount) GetTravelerType() DiscountTravelerType {
-	if o == nil || amadeus.IsNil(o.TravelerType) {
+	if o == nil || utils.IsNil(o.TravelerType) {
 		var ret DiscountTravelerType
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *Discount) GetTravelerType() DiscountTravelerType {
 // GetTravelerTypeOk returns a tuple with the TravelerType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Discount) GetTravelerTypeOk() (*DiscountTravelerType, bool) {
-	if o == nil || amadeus.IsNil(o.TravelerType) {
+	if o == nil || utils.IsNil(o.TravelerType) {
 		return nil, false
 	}
 	return o.TravelerType, true
@@ -131,7 +131,7 @@ func (o *Discount) GetTravelerTypeOk() (*DiscountTravelerType, bool) {
 
 // HasTravelerType returns a boolean if a field has been set.
 func (o *Discount) HasTravelerType() bool {
-	if o != nil && !amadeus.IsNil(o.TravelerType) {
+	if o != nil && !utils.IsNil(o.TravelerType) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *Discount) SetTravelerType(v DiscountTravelerType) {
 
 // GetCardNumber returns the CardNumber field value if set, zero value otherwise.
 func (o *Discount) GetCardNumber() string {
-	if o == nil || amadeus.IsNil(o.CardNumber) {
+	if o == nil || utils.IsNil(o.CardNumber) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *Discount) GetCardNumber() string {
 // GetCardNumberOk returns a tuple with the CardNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Discount) GetCardNumberOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.CardNumber) {
+	if o == nil || utils.IsNil(o.CardNumber) {
 		return nil, false
 	}
 	return o.CardNumber, true
@@ -163,7 +163,7 @@ func (o *Discount) GetCardNumberOk() (*string, bool) {
 
 // HasCardNumber returns a boolean if a field has been set.
 func (o *Discount) HasCardNumber() bool {
-	if o != nil && !amadeus.IsNil(o.CardNumber) {
+	if o != nil && !utils.IsNil(o.CardNumber) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *Discount) SetCardNumber(v string) {
 
 // GetCertificateNumber returns the CertificateNumber field value if set, zero value otherwise.
 func (o *Discount) GetCertificateNumber() string {
-	if o == nil || amadeus.IsNil(o.CertificateNumber) {
+	if o == nil || utils.IsNil(o.CertificateNumber) {
 		var ret string
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *Discount) GetCertificateNumber() string {
 // GetCertificateNumberOk returns a tuple with the CertificateNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Discount) GetCertificateNumberOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.CertificateNumber) {
+	if o == nil || utils.IsNil(o.CertificateNumber) {
 		return nil, false
 	}
 	return o.CertificateNumber, true
@@ -195,7 +195,7 @@ func (o *Discount) GetCertificateNumberOk() (*string, bool) {
 
 // HasCertificateNumber returns a boolean if a field has been set.
 func (o *Discount) HasCertificateNumber() bool {
-	if o != nil && !amadeus.IsNil(o.CertificateNumber) {
+	if o != nil && !utils.IsNil(o.CertificateNumber) {
 		return true
 	}
 
@@ -217,19 +217,19 @@ func (o Discount) MarshalJSON() ([]byte, error) {
 
 func (o Discount) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.SubType) {
+	if !utils.IsNil(o.SubType) {
 		toSerialize["subType"] = o.SubType
 	}
-	if !amadeus.IsNil(o.CityName) {
+	if !utils.IsNil(o.CityName) {
 		toSerialize["cityName"] = o.CityName
 	}
-	if !amadeus.IsNil(o.TravelerType) {
+	if !utils.IsNil(o.TravelerType) {
 		toSerialize["travelerType"] = o.TravelerType
 	}
-	if !amadeus.IsNil(o.CardNumber) {
+	if !utils.IsNil(o.CardNumber) {
 		toSerialize["cardNumber"] = o.CardNumber
 	}
-	if !amadeus.IsNil(o.CertificateNumber) {
+	if !utils.IsNil(o.CertificateNumber) {
 		toSerialize["certificateNumber"] = o.CertificateNumber
 	}
 	return toSerialize, nil

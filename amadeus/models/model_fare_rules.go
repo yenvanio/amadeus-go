@@ -12,11 +12,11 @@ package models
 
 import (
 	"encoding/json"
-	"github.com/yenvanio/amadeus-go/amadeus"
+	"github.com/yenvanio/amadeus-go/amadeus/utils"
 )
 
 // checks if the FareRules type satisfies the MappedNullable interface at compile time
-var _ amadeus.MappedNullable = &FareRules{}
+var _ utils.MappedNullable = &FareRules{}
 
 // FareRules struct for FareRules
 type FareRules struct {
@@ -44,7 +44,7 @@ func NewFareRulesWithDefaults() *FareRules {
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
 func (o *FareRules) GetCurrency() string {
-	if o == nil || amadeus.IsNil(o.Currency) {
+	if o == nil || utils.IsNil(o.Currency) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *FareRules) GetCurrency() string {
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FareRules) GetCurrencyOk() (*string, bool) {
-	if o == nil || amadeus.IsNil(o.Currency) {
+	if o == nil || utils.IsNil(o.Currency) {
 		return nil, false
 	}
 	return o.Currency, true
@@ -62,7 +62,7 @@ func (o *FareRules) GetCurrencyOk() (*string, bool) {
 
 // HasCurrency returns a boolean if a field has been set.
 func (o *FareRules) HasCurrency() bool {
-	if o != nil && !amadeus.IsNil(o.Currency) {
+	if o != nil && !utils.IsNil(o.Currency) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *FareRules) SetCurrency(v string) {
 
 // GetRules returns the Rules field value if set, zero value otherwise.
 func (o *FareRules) GetRules() []TermAndCondition {
-	if o == nil || amadeus.IsNil(o.Rules) {
+	if o == nil || utils.IsNil(o.Rules) {
 		var ret []TermAndCondition
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *FareRules) GetRules() []TermAndCondition {
 // GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FareRules) GetRulesOk() ([]TermAndCondition, bool) {
-	if o == nil || amadeus.IsNil(o.Rules) {
+	if o == nil || utils.IsNil(o.Rules) {
 		return nil, false
 	}
 	return o.Rules, true
@@ -94,7 +94,7 @@ func (o *FareRules) GetRulesOk() ([]TermAndCondition, bool) {
 
 // HasRules returns a boolean if a field has been set.
 func (o *FareRules) HasRules() bool {
-	if o != nil && !amadeus.IsNil(o.Rules) {
+	if o != nil && !utils.IsNil(o.Rules) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o FareRules) MarshalJSON() ([]byte, error) {
 
 func (o FareRules) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !amadeus.IsNil(o.Currency) {
+	if !utils.IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
-	if !amadeus.IsNil(o.Rules) {
+	if !utils.IsNil(o.Rules) {
 		toSerialize["rules"] = o.Rules
 	}
 	return toSerialize, nil
